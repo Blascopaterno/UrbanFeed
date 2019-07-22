@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_141321) do
+ActiveRecord::Schema.define(version: 2019_07_22_151200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "complaints", force: :cascade do |t|
+    t.text "description"
+    t.string "picture"
+    t.string "address"
+    t.integer "upvote"
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.bigint "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_complaints_on_category_id"
+    t.index ["type_id"], name: "index_complaints_on_type_id"
+    t.index ["user_id"], name: "index_complaints_on_user_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +50,13 @@ ActiveRecord::Schema.define(version: 2019_07_22_141321) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "profession"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "complaints", "categories"
+  add_foreign_key "complaints", "types"
+  add_foreign_key "complaints", "users"
 end
