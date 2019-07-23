@@ -1,7 +1,9 @@
-<h1 id= "form-title">My Complain :</h1>
   <%= simple_form_for(@complaint) do |f| %>
   <div class="create_form">
-      <%= f.input :description %>
-      <%= f.input :address %>
+      <dt><%= f.input :description %></dt>
+      <%= f.input :address %></dt>
+      <%= f.input :category,
+                  collection: ["C1", "C2", "C3"]%>
+        <%= f.input :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: ["C1", "C2", "C3", "C1", "C2", "C3"] %>
       <%= f.submit %>
-    <% end %>
+  <% end %>
