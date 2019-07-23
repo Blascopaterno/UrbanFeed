@@ -1,37 +1,38 @@
-
-<p>the adress that has been entered.</p>
-
+<div class="complaint-index-container">
+  <p>the adress that has been entered.</p>
+</div>
 <div id="map-container">
   <div
-    id="map"
-    style="width: 100%;
-    height: 460px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  id="map"
+  style="width: 100%;
+  height: 460px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </div>
+<div class="complaint-index-container">
+  <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red" %>
 
-<%= link_to "Add a complaint", "#", class: "btn btn-primary-red square-btn-red" %>
 
-
-<div class="container">
-  <h5> Complaints around the area </h5>
-  <% @complaints.each do |complaint| %>
+  <div class="container">
+    <h5> Complaints around the area </h5>
+    <% @complaints.each do |complaint| %>
     <div class="complaint-container">
       <div class="row">
         <div class="col-8 ">
           <p> "<%= complaint.description %>" </p>
         </div>
         <div class="col-4 upvote-complaints">
-           <i class="fas fa-thumbs-up" class="blue-font"></i>
-           <%= complaint.upvote %>
-        </div>
-        <div class="tag">
-          <%= complaint.type.name %>
-        </div>
+         <i class="fas fa-thumbs-up" class="blue-font"></i>
+         <%= complaint.upvote %>
+       </div>
+       <div class="tag">
+        <%= complaint.type.name %>
       </div>
     </div>
+  </div>
   <% end %>
+</div>
 </div>
 
 <!-- Modal -->
