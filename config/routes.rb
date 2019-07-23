@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :complaints
 
+  get 'profile', to: 'pages#profile', as: :profile
 
 end
