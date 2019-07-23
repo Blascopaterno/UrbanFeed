@@ -1,0 +1,7 @@
+<h1 id= "form-title">My Complain :</h1>
+  <%= simple_form_for(@complaint) do |f| %>
+  <div class="create_form">
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.submit %>
+    <% end %>
