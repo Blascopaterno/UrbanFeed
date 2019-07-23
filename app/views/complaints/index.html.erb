@@ -10,12 +10,16 @@
 <h1> Complaints around the area </h1>
 
 <% @complaints.each do |complaint| %>
-  <div>
-    <%= complaint.description %>
-    <div>
-      <%= complaint.upvote %>
+  <div id="complaints-container">
+    <div id="description-upvote">
+      <%= complaint.description %>
+      <div id="upvote">
+        <i class="fas fa-thumbs-up" class="blue"></i>
+        <%= complaint.upvote %>
+      </div>
     </div>
-    <div>
+
+    <div id="complains-type">
       <%= complaint.type.name %>
     </div>
   </div>
