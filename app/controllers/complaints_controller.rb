@@ -5,6 +5,21 @@ class ComplaintsController < ApplicationController
   def index
     @complaints = Complaint.all
     @complaint = Complaint.new
+
+    @complaints = Complaint.geocoded
+
+        @markers = @complaints.map do |complaint|
+      {
+        lat: complaint.latitude,
+        lng: complaint.longitude
+      }
+    end
+
+    if params[:query].present?
+      @complaints = Complaint.where(address: params[:query])
+    else
+      @complaints = Complaint.all
+    end
   end
 
   def show
@@ -17,5 +32,9 @@ class ComplaintsController < ApplicationController
   end
 
   def delete
+  end
+
+  def find_address
+    @address = request.location.city
   end
 end
