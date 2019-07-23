@@ -17,17 +17,25 @@
 
 <h1> Complaints around the area </h1>
 
-<% @complaints.each do |complaint| %>
-  <div>
-    <%= complaint.description %>
-    <div>
-      <%= complaint.upvote %>
+<div class="container">
+  <% @complaints.each do |complaint| %>
+    <div class="complaint-container">
+      <div class="row">
+        <div class="col-8 ">
+          <p> "<%= complaint.description %>" </p>
+        </div>
+        <div class="col-4 upvote-complaints">
+           <i class="fas fa-thumbs-up" class="blue-font"></i>
+           <%= complaint.upvote %>
+        </div>
+        <div class="complaint-type">
+          <%= complaint.type.name %>
+        </div>
+      </div>
+
     </div>
-    <div>
-      <%= complaint.type.name %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

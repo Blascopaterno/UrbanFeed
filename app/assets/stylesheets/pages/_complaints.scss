@@ -1,0 +1,27 @@
+.blue-font { // dont work on my upvote logo
+  color: $blue;
+}
+
+.upvote-complaints {
+  text-align: right;
+}
+
+.complaint-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.col-8 p {
+  margin: 0;
+}
+
+.complaint-type {
+  margin-top: 4px;
+  border-radius: 5px;
+  background-color: rgba(200,200,200,0.8);
+  color: rgb(100,100,100);
+  text-align: center;
+  margin-left: 15px;
+  padding: 2px 8px;
+}
