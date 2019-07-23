@@ -1,2 +1,20 @@
-<h1>Complaints#index</h1>
-<p>Find me in app/views/complaints/index.html.erb</p>
+
+<p>the adress that has been entered.</p>
+
+<h1>The map</h1>
+
+<p>modal for complaints#new</p>
+
+<h1> Complaints around the area </h1>
+
+<% @complaints.each do |complaint| %>
+  <div>
+    <%= complaint.description %>
+    <div>
+      <%= complaint.upvote %>
+    </div>
+    <div>
+      <%= complaint.type %>
+    </div>
+  </div>
+<% end %>
