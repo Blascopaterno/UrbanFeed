@@ -14,19 +14,25 @@
 <%= link_to "Add a complaint", "#", class: "btn btn-primary-red square-btn-red" %>
 
 
-<h1> Complaints around the area </h1>
-
-<% @complaints.each do |complaint| %>
-  <div>
-    <%= complaint.description %>
-    <div>
-      <%= complaint.upvote %>
+<div class="container">
+  <h5> Complaints around the area </h5>
+  <% @complaints.each do |complaint| %>
+    <div class="complaint-container">
+      <div class="row">
+        <div class="col-8 ">
+          <p> "<%= complaint.description %>" </p>
+        </div>
+        <div class="col-4 upvote-complaints">
+           <i class="fas fa-thumbs-up" class="blue-font"></i>
+           <%= complaint.upvote %>
+        </div>
+        <div class="fake-btn">
+          <%= complaint.type.name %>
+        </div>
+      </div>
     </div>
-    <div>
-      <%= complaint.type.name %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -34,17 +40,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Add a complaint</h5>
-        <%= render "shared/form" %>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= render "shared/form" %>
       </div>
     </div>
   </div>

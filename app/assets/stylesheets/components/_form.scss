@@ -1,0 +1,47 @@
+.hidden {
+  display: none;
+}
+
+.collection_radio_buttons {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  // display: flex;
+  width: 80px;
+
+  &.active {
+  background: #A9A9A9;
+  color: white;
+  opacity: 1;
+  }
+}
+
+.create_form {
+  display: block;
+  // display: block;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.form-check {
+  display: inline;
+  text-align: center;
+}
+
+.btn-flat {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  // display: flex;
+  width: 80px;
+}
