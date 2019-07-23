@@ -9,7 +9,7 @@
 .complaint-container {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .col-8 p {
@@ -25,4 +25,9 @@
   margin-top: 10px;
   margin-left: 15px;
   padding: 2px 8px;
+}
+
+.container h5{
+  margin-top: 40px;
+  text-align: center;
 }
