@@ -12,6 +12,12 @@
   transition: opacity 0.3s ease;
   // display: flex;
   width: 80px;
+
+  &.active {
+  background: red;
+  color: white;
+  opacity: 1;
+  }
 }
 
 .create_form {
