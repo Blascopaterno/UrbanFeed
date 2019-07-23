@@ -1,7 +1,15 @@
 
 <p>the adress that has been entered.</p>
 
-<h1>The map</h1>
+<div id="map-container">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Add a complain

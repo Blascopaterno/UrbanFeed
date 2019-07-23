@@ -1,1 +1,67 @@
 // Specific CSS for your home-page
+body {
+  background-color: white;
+}
+
+.homepage-container {
+  padding: 15px;
+  background: white;
+}
+
+.homepage-container h2 {
+  color: #000000;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 59px;
+}
+
+.container-intro h1 {
+  display: inline;
+  letter-spacing: -1px;
+  font-style: normal;
+  color: #000000;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 74px;
+}
+
+.container-intro p {
+  color: black;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+#blue-font {
+  display: inline-block;
+  color: #5791FF;
+}
+
+.homepage-container p {
+  margin: 0;
+}
+
+.welcome-message h2 {
+  margin: 0;
+  margin-bottom: -12px;
+}
+
+.form_box {
+  display: flex;
+}
+
+.form-control-style {
+  border-radius: 8px;
+  width: 250px;
+  height: 51px;
+  margin-left: 25px;
+  margin-right: 10px;
+  background-color: #EEEEEE;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.form_box {
+  margin-top: 40px;
+}
