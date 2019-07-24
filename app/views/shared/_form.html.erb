@@ -3,7 +3,7 @@
       <dt><%= f.input :description %></dt>
       <%= f.input :address %></dt>
       <%= f.input :category,
-                  collection: ["C1", "C2", "C3"]%>
-        <%= f.input :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: ["C1", "C2", "C3", "C1", "C2", "C3"] %>
-      <%= f.submit class: "btn-flat" %>
+                  collection: ["Safety", "Maintenance", "Accessibility", "Sustainbility", "Quality"]%>
+        <%= f.input :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: ["Bridge", "Road", "Parc", "Public Building"] %>
+      <%= f.submit class: "btn-flat-create" %>
   <% end %>
