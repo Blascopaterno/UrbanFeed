@@ -1,7 +1,7 @@
-User.delete_all
-Type.delete_all
-Category.delete_all
 Complaint.delete_all
+Category.delete_all
+Type.delete_all
+User.delete_all
 
 puts"delete all data"
 
