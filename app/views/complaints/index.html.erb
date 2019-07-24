@@ -23,7 +23,7 @@
     <div class="complaint-container">
       <div class="row">
         <div class="col-8 ">
-          <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal" do %>
+          <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
           <p> "<%= complaint.description %>" </p>
           <% end %>
         </div>

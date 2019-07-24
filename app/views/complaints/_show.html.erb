@@ -1,15 +1,27 @@
 <!-- <h1>Complaints#show</h1>
 <p>Find me in app/views/complaints/show.html.erb</p>
+<%= complaint.id  %>
  -->
-<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
+<div class="modal fade" id="showModal_<%= complaint.id %>" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="create_form">
         <h5 class="modal-title" id="exampleModalLongTitle">Complaint details</h5>
+        <strong><p>Address</p></strong>
         <p class="modal-address" id="exampleModaladdress"> <%= complaint.address %></p>
-        <p class="modal-address" id="exampleModalCategory"> <%= complaint.category %></p>
+        <strong><p>Category</p></strong>
+        <p class="modal-address" id="exampleModalCategory"> <%= complaint.category.name %></p>
+        <strong><p>Description</p></strong>
         <p class="modal-address" id="exampleModalDescription"> <%= complaint.description %></p>
-        <p class="modal-address" id="exampleModalUser"> <%= complaint.user %></p>
+        <strong><p>Name</p></strong>
+        <p class="modal-address" id="exampleModalUser"> <%= complaint.user.name %></p>
+        <strong><p>Reported on</p></strong>
+        <p class="modal-address" id="exampleModalUser"> <%= complaint.created_at %></p>
+        <!-- Put the photo below -->
+        <div class="col-4 upvote-complaints">
+          <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <%= complaint.upvote %>
+        </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
