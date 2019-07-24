@@ -1,7 +1,7 @@
-User.delete_all
-Type.delete_all
-Category.delete_all
 Complaint.delete_all
+Category.delete_all
+Type.delete_all
+User.delete_all
 
 puts"delete all data"
 
@@ -44,3 +44,5 @@ Complaint.create(
   category: cat_1,
   type: type_1,
 )
+
+puts"create all data"

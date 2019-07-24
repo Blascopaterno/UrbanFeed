@@ -1,7 +1,7 @@
 <div class="complaint-index-container">
   <p><%= params[:query]  %></p>
-
 </div>
+
 <div id="map-container">
   <div
   id="map"
@@ -13,10 +13,11 @@
 </div>
 <div class="complaint-index-container">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
-
+</div>
 
   <div class="container">
     <h5> Complaints around the area </h5>
+
     <div id="my-div">
       <a href="#" id="clickable_complaint">
         <% @complaints.each do |complaint| %>
