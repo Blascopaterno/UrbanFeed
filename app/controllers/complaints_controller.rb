@@ -26,13 +26,17 @@ class ComplaintsController < ApplicationController
   end
 
   def new
+    @complaints = Complaint.new
   end
 
   def create
+
   end
 
   def delete
   end
+
+  private
 
   def find_address
     @address = request.location.city
