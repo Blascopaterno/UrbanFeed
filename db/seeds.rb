@@ -27,7 +27,7 @@ cat_2 = Category.find_by(name: 'Maintenance')
 
 Complaint.create(
   description: 'Huge crack on the road, almost broke my car this morning',
-  address: "calle monteleon 23",
+  address: "20 calle Ancora, Madrid",
   upvote: 3,
   picture: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Crack_along_the_road_at_Uranohama_Port.jpg',
   user: User.last,
@@ -37,7 +37,7 @@ Complaint.create(
 
 Complaint.create(
   description: 'The bridge barrier are not high enough',
-  address: "calle ancora 10",
+  address: "14 calle Juan de Urbieta",
   upvote: 5,
   picture: "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659",
   user: User.last,

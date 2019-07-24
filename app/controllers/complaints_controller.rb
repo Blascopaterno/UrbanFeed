@@ -1,28 +1,30 @@
 class ComplaintsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @complaints = Complaint.all
+    location = params[:query]
+    inter = Geocoder.search(location)
+    @results = inter.first.coordinates
+    if location.present?
+      @complaints = Complaint.near(location, 20)
+    else
+      @complaints = Complaint.geocoded
+    end
+
     @complaint = Complaint.new
 
-    @complaints = Complaint.geocoded
+    # @complaints = Complaint.geocoded
 
-        @markers = @complaints.map do |complaint|
+    @markers = @complaints.map do |complaint|
       {
         lat: complaint.latitude,
         lng: complaint.longitude
       }
     end
-
-    if params[:query].present?
-      @complaints = Complaint.where(address: params[:query])
-    else
-      @complaints = Complaint.all
-    end
   end
 
   def show
+    @complaints = Complaint.find(params[:id])
   end
 
   def new
