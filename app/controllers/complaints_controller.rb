@@ -23,6 +23,7 @@ class ComplaintsController < ApplicationController
   end
 
   def show
+    @complaint = Complaint.find(params[:id])
   end
 
   def new
