@@ -19,28 +19,27 @@
 
   <div class="container">
     <h5> Complaints around the area </h5>
-    <div id="my-div">
-      <a href="#" id="clickable_complaint">
-        <% @complaints.each do |complaint| %>
+      <% @complaints.each do |complaint| %>
         <div class="complaint-container">
           <div class="row">
             <div class="col-8 ">
-              <p> "<%= complaint.description %>" </p>
+              <%= link_to complaint_path(complaint) do %>
+                <p> "<%= complaint.description %>" </p>
+              <% end %>
             </div>
             <div class="col-4 upvote-complaints">
              <i class="fas fa-thumbs-up" class="blue-font"></i>
              <%= complaint.upvote %>
-           </div>
-           <div class="tag">
-            <%= complaint.type.name %>
+            </div>
+            <div class="tag">
+              <%= complaint.type.name %>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
-    </div>
-  </a>
+  </div>
 </div>
-</div>
+
 
 <!-- Modal for new complaint -->
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">

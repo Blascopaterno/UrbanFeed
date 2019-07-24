@@ -30,7 +30,6 @@ class ComplaintsController < ApplicationController
   end
 
   def create
-
   end
 
   def delete
