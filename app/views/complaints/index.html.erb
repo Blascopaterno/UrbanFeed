@@ -19,25 +19,26 @@
 
   <div class="container">
     <h5> Complaints around the area </h5>
-      <% @complaints.each do |complaint| %>
-        <div class="complaint-container">
-          <div class="row">
-            <div class="col-8 ">
-              <%= link_to complaint_path(complaint) do %>
-                <p> "<%= complaint.description %>" </p>
-              <% end %>
-            </div>
-            <div class="col-4 upvote-complaints">
-             <i class="fas fa-thumbs-up" class="blue-font"></i>
-             <%= complaint.upvote %>
-            </div>
-            <div class="tag">
-              <%= complaint.type.name %>
-            </div>
-          </div>
+    <% @complaints.each do |complaint| %>
+    <div class="complaint-container">
+      <div class="row">
+        <div class="col-8 ">
+          <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal" do %>
+          <p> "<%= complaint.description %>" </p>
+          <% end %>
         </div>
-      <% end %>
+        <div class="col-4 upvote-complaints">
+         <i class="fas fa-thumbs-up" class="blue-font"></i>
+         <%= complaint.upvote %>
+       </div>
+       <div class="tag">
+        <%= complaint.type.name %>
+      </div>
+    </div>
   </div>
+  <%= render 'show', complaint: complaint  %>
+  <% end %>
+</div>
 </div>
 
 
@@ -57,4 +58,9 @@
     </div>
   </div>
 </div>
+
+
+
+
+
 
