@@ -1,7 +1,7 @@
 <div class="complaint-index-container">
   <p><%= params[:query]  %></p>
-
 </div>
+
 <div id="map-container">
   <div
   id="map"
@@ -13,28 +13,28 @@
 </div>
 <div class="complaint-index-container">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
-
+</div>
 
   <div class="container">
     <h5> Complaints around the area </h5>
     <% @complaints.each do |complaint| %>
-    <div class="complaint-container">
-      <div class="row">
-        <div class="col-8 ">
-          <p> "<%= complaint.description %>" </p>
+      <div class="complaint-container">
+        <div class="row">
+          <div class="col-8 ">
+            <p> "<%= complaint.description %>" </p>
+          </div>
+          <div class="col-4 upvote-complaints">
+           <i class="fas fa-thumbs-up" class="blue-font"></i>
+           <%= complaint.upvote %>
+         </div>
+         <div class="tag">
+            <%= complaint.type.name %>
+         </div>
         </div>
-        <div class="col-4 upvote-complaints">
-         <i class="fas fa-thumbs-up" class="blue-font"></i>
-         <%= complaint.upvote %>
-       </div>
-       <div class="tag">
-        <%= complaint.type.name %>
       </div>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
