@@ -12,7 +12,7 @@
   ></div>
 </div>
 <div class="complaint-index-container">
-  <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red" %>
+  <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
 
 
   <div class="container">
@@ -37,7 +37,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
