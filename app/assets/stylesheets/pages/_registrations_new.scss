@@ -1,0 +1,76 @@
+abbr[title="required"] {
+  display: none;
+}
+
+.masha-form label {
+  display: none;
+}
+
+.masha-form {
+  text-align: center;
+}
+
+.signup-form-intro h2 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 31px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.signup-form-intro p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(81, 81, 81, 0.53);
+  margin-bottom: 0px;
+}
+
+.signup-form-img p {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.57);
+}
+
+.signup-form-img {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 15px;
+}
+
+::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(81, 81, 81, 0.53);
+}
+
+.form-control {
+  width: 250px;
+  height: 51px;
+  border-radius: 8px;
+  background: #EEEEEE;
+  display: inline;
+}
+
+// .btn {
+//   background-color: #5791FF;
+//   border-radius: 8px;
+//   font-style: normal;
+//   font-weight: 800;
+//   font-size: 18px;
+//   color: white;
+//   text-decoration: none;
+//   text-align: center;
+//   width: 280px;
+//   height: 51px;
+//   margin-top: 16px;
+//   padding: 10px;
+// }
