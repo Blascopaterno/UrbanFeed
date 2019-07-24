@@ -30,6 +30,16 @@ class ComplaintsController < ApplicationController
   end
 
   def create
+    @complaint = Complaint.new(complaint_params)
+    @complaint.upvote = 1
+    @complaint.user = current_user
+    @complaint.category = Category.find_by_name(params[:complaint][:category])
+    @complaint.type = Type.find_by_name(params[:complaint][:type])
+    if @complaint.save
+      redirect_to complaints_path
+    else
+      render :new
+    end
   end
 
   def delete
@@ -44,8 +54,12 @@ class ComplaintsController < ApplicationController
   private
 
   def create_map(location)
-      inter = Geocoder.search(location)
-      @results = inter.first.coordinates
-      @complaints = Complaint.near(location, 20)
+    inter = Geocoder.search(location)
+    @results = inter.first.coordinates
+    @complaints = Complaint.near(location, 20)
+  end
+
+  def complaint_params
+    params.require(:complaint).permit(:description, :picture, :address, :category_id, :type_id)
   end
 end
