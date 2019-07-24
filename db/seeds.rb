@@ -44,3 +44,5 @@ Complaint.create(
   category: cat_1,
   type: type_1,
 )
+
+puts"create all data"
