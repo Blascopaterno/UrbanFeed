@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-#added gems
+# added gems
 
 gem 'geocoder'
 
