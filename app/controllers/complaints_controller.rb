@@ -45,11 +45,6 @@ class ComplaintsController < ApplicationController
   def delete
   end
 
-  private
-
-  def find_address
-    @address = request.location.city
-  end
 
   private
 
