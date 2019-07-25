@@ -46,6 +46,12 @@ class ComplaintsController < ApplicationController
   def delete
   end
 
+  def upvote
+    @complaint = Complaint.find(params[:complaint])
+    @complaint.upvote += 1
+    @complaint.save
+  end
+
   private
 
   def create_map(location)
@@ -55,6 +61,6 @@ class ComplaintsController < ApplicationController
   end
 
   def complaint_params
-    params.require(:complaint).permit(:description, :picture, :address)
+    params.require(:complaint).permit(:description, :picture, :address, :category_id, :type_id)
   end
 end

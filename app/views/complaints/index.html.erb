@@ -1,6 +1,6 @@
 <div class="complaint-index-container">
   <div id='location-style'>
-    <%= image_tag("EDITICON.png", width: 32, height: 28) %>
+    <%= link_to image_tag("EDITICON.png", width: 32, height: 28), root_path %>
     <div id='address-location'>
       <p><strong><%= params[:query]  %></strong></p>
     </div>
@@ -39,7 +39,9 @@
           <% end %>
         </div>
         <div class="col-4 upvote-complaints">
-         <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
+            <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <% end %>
          <%= complaint.upvote %>
        </div>
        <div class="tag">

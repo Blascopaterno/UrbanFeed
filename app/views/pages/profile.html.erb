@@ -2,7 +2,7 @@
 <%= link_to "log out", destroy_user_session_path, method: :delete%>
 
 
-<h2>Citizen Profile</h2> <img src="" alt="">
+<h2>Citizen Profile</h2>  <%= link_to image_tag("EDITICON.png", width: 50, height: 45) %>
 
 <div>
   <p><%=@user.name%></p>
@@ -12,12 +12,12 @@
 </div>
 
 <p>Likes on your complaints:</p>
-<img src="" alt="">
+<%= link_to image_tag("BIGLIKEICON.png", width: 85, height: 85) %>
 
 <h2>Your complaint history</h2>
 
 <% Complaint.where(user_id:@user.id).each do |complaint| %>
 <%= complaint.description %>
-<%= complaint.type %>
+<%= complaint.type.name %>
 <% end %>
-<img src="" alt="">
+                                                        <%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %>
