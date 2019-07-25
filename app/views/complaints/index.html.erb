@@ -1,7 +1,7 @@
 <div class="complaint-index-container">
   <p><%= params[:query]  %></p>
-</div>
 
+</div>
 <div id="map-container">
   <div
   id="map"
@@ -9,35 +9,39 @@
   height: 460px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-latitude="<%= @results[0] %>"
+  data-longitude="<%= @results[1] %>"
   ></div>
 </div>
 <div class="complaint-index-container">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
-</div>
+
 
   <div class="container">
     <h5> Complaints around the area </h5>
     <% @complaints.each do |complaint| %>
-      <div class="complaint-container">
-        <div class="row">
-          <div class="col-8 ">
-            <p> "<%= complaint.description %>" </p>
-          </div>
-          <div class="col-4 upvote-complaints">
-           <i class="fas fa-thumbs-up" class="blue-font"></i>
-           <%= complaint.upvote %>
-         </div>
-         <div class="tag">
-            <%= complaint.type.name %>
-         </div>
+    <div class="complaint-container">
+      <div class="row">
+        <div class="col-8 ">
+          <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+          <p> "<%= complaint.description %>" </p>
+          <% end %>
         </div>
+        <div class="col-4 upvote-complaints">
+         <i class="fas fa-thumbs-up" class="blue-font"></i>
+         <%= complaint.upvote %>
+       </div>
+       <div class="tag">
+        <%= complaint.type.name %>
       </div>
-    <% end %>
+    </div>
   </div>
+  <%= render 'show', complaint: complaint  %>
+  <% end %>
+</div>
+</div>
 
-
-<!-- Modal -->
-
+<!-- Modal for new complaint -->
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -53,3 +57,9 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+

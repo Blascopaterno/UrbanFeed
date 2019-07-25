@@ -4,7 +4,7 @@
     <h2>Welcome to</h2>
     <div class="container-intro">
       <h1>Urban</h1>
-      <h1 id="blue-font">Feed</h1>
+      <h1 class="blue-font">Feed</h1>
     </div>
   </div>
   <div class="container-intro">
@@ -13,15 +13,16 @@
   </div>
 
     <%= form_tag complaints_path, method: :get do %>
-    <div class="form_box">
-     <%= text_field_tag :query,
-     params[:query],
-     class: "form-control-style",
-      placeholder: "Introduce your location"
-      %>
-      <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
-      <% end %>
-    </div>
+      <div class="form_box">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control-style",
+          id: "complaint-address",
+          placeholder: "Introduce your location"
+       %>
+        <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
+      </div>
+    <% end %>
 <%= request.location.city %>
 </div>
 
