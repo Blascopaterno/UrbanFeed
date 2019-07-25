@@ -1,6 +1,6 @@
 <div class="complaint-index-container">
   <div id='location-style'>
-    <%= link_to image_tag("EDITICON.png", width: 32, height: 28) %>
+    <%= image_tag("EDITICON.png", width: 32, height: 28) %>
     <div id='address-location'>
       <p><strong><%= params[:query]  %></strong></p>
     </div>
@@ -15,8 +15,13 @@
   height: 460px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-latitude="<%= @results[0] %>"
-  data-longitude="<%= @results[1] %>"
+  <% if @results.present?%>
+    data-latitude="<%= @results[0] %>"
+    data-longitude="<%= @results[1] %>"
+  <% else %>
+    data-latitude="40.4165"
+    data-longitude="-3.70256"
+  <% end %>
   ></div>
 </div>
 <div class="complaint-index-container">
