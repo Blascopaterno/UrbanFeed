@@ -53,24 +53,29 @@ abbr[title="required"] {
 }
 
 .form-control {
-  width: 250px;
+  width: 280px;
   height: 51px;
   border-radius: 8px;
   background: #EEEEEE;
   display: inline;
 }
 
-// .btn {
-//   background-color: #5791FF;
-//   border-radius: 8px;
-//   font-style: normal;
-//   font-weight: 800;
-//   font-size: 18px;
-//   color: white;
-//   text-decoration: none;
-//   text-align: center;
-//   width: 280px;
-//   height: 51px;
-//   margin-top: 16px;
-//   padding: 10px;
-// }
+.btn {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-color {
+  background-color: #5791FF;
+  border-radius: 8px;
+  width: 250px;
+  height: 51px;
+  margin-top: 20px;
+  padding: 6px;
+  display: inline-block;
+}
+

@@ -24,32 +24,33 @@
         <%= f.input :name,
     required: true,
     autofocus: true,
-    placeholder: "name*",
-    input_html: { autocomplete: "name" },
-    placeholder_html: [class: "bla"]%>
+    placeholder: "name",
+    input_html: { autocomplete: "name" }%>
 
       <%= f.input :email,
     required: true,
     autofocus: true,
-    placeholder: "email*",
+    placeholder: "email",
     input_html: { autocomplete: "email" }%>
 
       <%= f.input :password,
     required: true,
     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-    placeholder: "password*",
+    placeholder: "password",
     input_html: { autocomplete: "new-password" } %>
 
       <%= f.input :password_confirmation,
     required: true,
-    placeholder: "confirm password*",
+    placeholder: "confirm passwords",
     input_html: { autocomplete: "new-password" } %>
   </div>
 </div>
 
 
   <div class="form-actions">
+    <div class="btn-color">
       <%= f.button :submit, "create account" %>
+    </div>
   </div>
     <% end %>
 
