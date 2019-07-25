@@ -20,6 +20,10 @@
         <!-- Put the photo below -->
         <div class="col-4 upvote-complaints">
           <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <% if complaint.picture.present? %>
+          <%= cl_image_tag(complaint.picture,
+      width: 400, height: 300, crop: :fill) %>
+      <% end %>
           <%= complaint.upvote %>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
