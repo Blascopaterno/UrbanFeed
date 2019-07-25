@@ -2,16 +2,17 @@ class ComplaintsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @location = params[:query]
-    if @location.present?
-      create_map(@location)
+    unless params[:query] == "" || params[:query].nil?
+      @location = params[:query]
     else
-      create_map("Madrid")
+      @location = "Madrid"
     end
+    create_map(@location)
 
     @complaint = Complaint.new
 
-    @complaints = Complaint.geocoded
+    # this make us use the current location so dont comment it out.
+    @complaints = Complaint.near(@location, 20)
 
     @markers = @complaints.map do |complaint|
       {
@@ -33,8 +34,8 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.new(complaint_params)
     @complaint.upvote = 1
     @complaint.user = current_user
-    @complaint.category = Category.find_by_name(params[:complaint][:category])
-    @complaint.type = Type.find_by_name(params[:complaint][:type])
+    @complaint.category = Category.find(params[:complaint][:category_id])
+    @complaint.type = Type.find(params[:complaint][:type_id])
     if @complaint.save
       redirect_to complaints_path
     else
@@ -47,15 +48,9 @@ class ComplaintsController < ApplicationController
 
   private
 
-  def find_address
-    @address = request.location.city
-  end
-
-  private
-
   def create_map(location)
     inter = Geocoder.search(location)
-    @results = inter.first.coordinates
+    @results = inter.first.coordinates if inter.first.present?
     @complaints = Complaint.near(location, 20)
   end
 
