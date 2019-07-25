@@ -1,5 +1,11 @@
 <div class="complaint-index-container">
-  <p><%= params[:query]  %></p>
+  <div id='location-style'>
+    <%= link_to image_tag("EDITICON.png", width: 32, height: 28) %>
+    <div id='address-location'>
+      <p><strong><%= params[:query]  %></strong></p>
+    </div>
+  </div>
+
 
 </div>
 <div id="map-container">
