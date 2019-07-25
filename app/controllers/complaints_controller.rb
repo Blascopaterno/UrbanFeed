@@ -23,11 +23,11 @@ class ComplaintsController < ApplicationController
   end
 
   def show
-    @complaints = Complaint.find(params[:id])
+    @complaint = Complaint.find(params[:id])
   end
 
   def new
-    @complaints = Complaint.new
+    @complaint = Complaint.new
   end
 
   def create
