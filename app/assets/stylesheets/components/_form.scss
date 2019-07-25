@@ -19,9 +19,10 @@
   }
 }
 
-.create_form {
-  display: block;
-  // display: block;
+.create_form{
+display: flex;
+align-items: center;
+flex-direction: column;
 }
 
 .modal-content {
@@ -60,3 +61,4 @@
   margin-left: 14px;
   border-color: #E56F6F;
 }
+

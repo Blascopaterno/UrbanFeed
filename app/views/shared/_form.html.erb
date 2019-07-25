@@ -1,11 +1,14 @@
-  <%= simple_form_for(@complaint) do |f| %>
+<%= simple_form_for(@complaint) do |f| %>
+<div class="form-center">
   <div class="create_form">
-      <dt><%= f.input :description %></dt>
-      <%= f.input :address %></dt>
-      <%= f.association :category,
-                  collection: Category.all, value_method: :id %>
-      <%= f.association :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: Type.all, value_method: :id  %>
-      <%= f.input :picture %>
-      <%= f.input :picture_cache, as: :hidden %>
-      <%= f.submit class: "btn-flat-create" %>
-  <% end %>
+        <dt><%= f.input :description %></dt>
+        <%= f.input :address %>
+        <%= f.association :category,
+                    collection: Category.all, value_method: :id %>
+        <%= f.association :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: Type.all, value_method: :id  %>
+        <%= f.input :picture %>
+        <%= f.input :picture_cache, as: :hidden %>
+        <%= f.submit class: "btn-flat-create" %>
+    <% end %>
+  </div>
+</div>
