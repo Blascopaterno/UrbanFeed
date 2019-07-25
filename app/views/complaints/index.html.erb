@@ -39,7 +39,9 @@
           <% end %>
         </div>
         <div class="col-4 upvote-complaints">
-         <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
+            <i class="fas fa-thumbs-up" class="blue-font"></i>
+          <% end %>
          <%= complaint.upvote %>
        </div>
        <div class="tag">
