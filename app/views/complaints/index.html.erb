@@ -2,7 +2,11 @@
   <div id='location-style'>
     <%= link_to image_tag("EDITICON.png", width: 32, height: 28), root_path %>
     <div id='address-location'>
-      <p><strong><%= params[:query]  %></strong></p>
+      <% if params[:query].present? %>
+        <p><strong><%= params[:query]  %></strong></p>
+      <% else %>
+        <p><strong>Madrid</strong>
+      <% end %>
     </div>
   </div>
 
