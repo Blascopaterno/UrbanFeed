@@ -46,6 +46,12 @@ class ComplaintsController < ApplicationController
   def delete
   end
 
+  def upvote
+    @complaint = Complaint.find(params[:complaint])
+    @complaint.upvote += 1
+    @complaint.save
+  end
+
   private
 
   def create_map(location)
