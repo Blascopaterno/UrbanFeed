@@ -14,9 +14,11 @@
 
     <div id="padding-for-login">
       <% if user_signed_in? %>
-        <%= link_to profile_path do%>
-          <% current_user.name %>
-        <% end %>
+        <div id="padding-for-username">
+          <%= link_to profile_path, id: "username-style" do%>
+            <% current_user.name %>
+          <% end %>
+        </div>
       <% else %>
         <h6 data-toggle="modal" data-target="#loginModal">login</h6>
       <% end %>
