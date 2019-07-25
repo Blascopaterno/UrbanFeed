@@ -33,8 +33,8 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.new(complaint_params)
     @complaint.upvote = 1
     @complaint.user = current_user
-    @complaint.category = Category.find_by_name(params[:complaint][:category])
-    @complaint.type = Type.find_by_name(params[:complaint][:type])
+    @complaint.category = Category.find(params[:complaint][:category_id])
+    @complaint.type = Type.find(params[:complaint][:type_id])
     if @complaint.save
       redirect_to complaints_path
     else
@@ -44,7 +44,6 @@ class ComplaintsController < ApplicationController
 
   def delete
   end
-
 
   private
 
