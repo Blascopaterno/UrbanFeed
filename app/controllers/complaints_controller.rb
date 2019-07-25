@@ -45,10 +45,6 @@ class ComplaintsController < ApplicationController
   def delete
   end
 
-
-
-
-
   private
 
   def create_map(location)
