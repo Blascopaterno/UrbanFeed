@@ -8,7 +8,9 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
   end
-  
-  def user_profile # is actually author profile
-  end
+
+  # def user_profile # is actually author profile
+  #   @user = User.find(params[:id])
+  # end
+  # still thinking about it..Masha
 end
