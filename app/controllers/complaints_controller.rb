@@ -23,11 +23,11 @@ class ComplaintsController < ApplicationController
   end
 
   def show
-    @complaints = Complaint.find(params[:id])
+    @complaint = Complaint.find(params[:id])
   end
 
   def new
-    @complaints = Complaint.new
+    @complaint = Complaint.new
   end
 
   def create
@@ -50,6 +50,18 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.find(params[:complaint])
     @complaint.upvote += 1
     @complaint.save
+
+    if @complaint.save
+      respond_to do |format|
+        format.html { redirect_to complaints_path }
+        format.js  # <-- will render `app/views/complaints/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'complaints/index' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   private

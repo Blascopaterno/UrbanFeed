@@ -9,6 +9,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def user_profile # is actually author profiule
+  def user_profile # is actually author profile
   end
 end

@@ -1,8 +1,8 @@
 
-<%= link_to "log out", destroy_user_session_path, method: :delete%>
 
 
 <h2>Citizen Profile</h2>  <%= link_to image_tag("EDITICON.png", width: 50, height: 45) %>
+
 
 <div>
   <p><%=@user.name%></p>
@@ -21,3 +21,7 @@
 <%= complaint.type.name %>
 <% end %>
                                                         <%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %>
+
+
+<%= link_to "log out", destroy_user_session_path, method: :delete%>
+
