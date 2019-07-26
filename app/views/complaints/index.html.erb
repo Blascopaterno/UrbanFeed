@@ -37,6 +37,7 @@
     <h5> Complaints around the area </h5>
     <% @complaints.each do |complaint| %>
     <div class="complaint-container">
+      <hr class="separator">
       <div class="row">
         <div class="col-8 ">
           <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
