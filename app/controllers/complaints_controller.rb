@@ -50,6 +50,7 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.find(params[:complaint])
     @complaint.upvote += 1
     @complaint.save
+
     if @complaint.save
       respond_to do |format|
         format.html { redirect_to complaints_path }
