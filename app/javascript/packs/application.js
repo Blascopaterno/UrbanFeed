@@ -6,5 +6,6 @@ import { complaintBtns } from '../components/complaint_btns';
 import {initAutocomplete} from '../plugins/init_autocomplete'
 
 initMapbox();
+initAutocomplete();
 
 complaintBtns();

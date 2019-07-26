@@ -18,9 +18,11 @@
         <p><strong>Author : </strong><%= link_to complaint.user.name, user_profile_path %></p>
         <p><strong>Reported on : </strong><%= complaint.created_at %></p>
         <!-- The photo is displayed below -->
-        <div class="col-4 upvote-complaints">
+        <div class="upvote-complaints">
           <% if complaint.picture.present? %>
-          <%= cl_image_tag(complaint.picture, width: 400, height: 300, crop: :fill) %>
+          <div class="complaint_image">
+          <%= cl_image_tag(complaint.picture, crop: :fill) %>
+          </div>
           <% end %>
         </div>
         <div class="upvote">
