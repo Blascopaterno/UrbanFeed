@@ -45,15 +45,10 @@
           <% end %>
         </div>
 
-        <div class="col-4 upvote-complaints">
+        <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
           <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
-            <i class="fas fa-thumbs-up" class="blue-font"></i>
+            <%= render 'likes', complaint: complaint %>
           <% end %>
-         <%= complaint.upvote %>
-        <div class="col-4 upvote-complaints" id="<%= complaint.id %>">
-          <%= render 'likes', complaint: complaint %>
-
-       </div>
        <div class="tag">
         <%= complaint.type.name %>
       </div>
