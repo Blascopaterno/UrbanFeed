@@ -20,12 +20,42 @@
   color: blue;
 }
 
+.upvote{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+}
+
 #category {
     border-radius: 5px;
     background-color: rgba(200, 200, 200, 0.8);
     color: #646464;
     text-align: center;
     margin-top: 10px;
-    margin-left: 15px;
-    padding: 2px 8px;
+    padding: 3px 8px;
+    width: 108px;
 }
+
+.show-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#description {
+  margin-top: 10px;
+}
+
+.row {
+  // border-top: ridge 1px grey;
+  padding: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.separator{
+    border-top: 1px solid gray;
+    width: 90%;
+}
+
+
