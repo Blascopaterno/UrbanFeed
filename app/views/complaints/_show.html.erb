@@ -13,7 +13,7 @@
           <h6 class="modal-title" id="exampleModalLongTitle">Complaint details</h6>
         </div>
         <p><strong><%= complaint.address %></strong></p>
-        <p><%= complaint.category.name %></p>
+        <p id="category"><%= complaint.category.name %></p>
         <p><%= complaint.description %></p>
         <p><strong>Author : </strong><%= link_to complaint.user.name, user_profile_path %></p>
         <p><strong>Reported on : </strong><%= complaint.created_at %></p>
