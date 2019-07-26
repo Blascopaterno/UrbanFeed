@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   resources :complaints
 
+  resources :users # Masha created thos route to be able to see the profile that is does not belong to the current user
+
   post "upvote", to: "complaints#upvote", as: :upvote
 
   get 'profile', to: 'pages#profile', as: :profile
-  get 'user_profile', to: 'pages#user_profile', as: :user_profile
+  #get 'user_profile', to: 'pages#user_profile', as: :user_profile
+
 end

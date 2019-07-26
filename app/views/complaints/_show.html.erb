@@ -15,7 +15,7 @@
         <p><strong><%= complaint.address %></strong></p>
         <p><%= complaint.category.name %></p>
         <p><%= complaint.description %></p>
-        <p><strong>Author : </strong><%= link_to complaint.user.name, user_profile_path %></p>
+        <p><strong>Author : </strong><%= link_to complaint.user.name, user_path(complaint.user) %></p>
         <p><strong>Reported on : </strong><%= complaint.created_at %></p>
         <!-- The photo is displayed below -->
         <div class="col-4 upvote-complaints">

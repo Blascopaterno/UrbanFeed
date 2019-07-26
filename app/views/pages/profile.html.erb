@@ -14,7 +14,7 @@
 
 <% Complaint.where(user_id:@user.id).each do |complaint| %>
 <%= complaint.description %>
-<%= complaint.type %>
+<%= complaint.type.name %>
 <% end %>
 <img src="" alt="">
 
