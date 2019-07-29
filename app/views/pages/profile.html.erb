@@ -1,26 +1,25 @@
 
 
+<div class="userprofile-container">
+  <h2>Citizen Profile</h2>
 
-<h2>Citizen Profile</h2>  <%= link_to image_tag("EDITICON.png", width: 50, height: 45) %>
+  <div id="p-margins">
+    <p><strong>Name: </strong><%=@user.name%></p>
 
+    <p><strong>Profession: </strong><%=@user.profession%></p>
+    <p><strong>Email: </strong><%=@user.email%></p>
+  </div>
 
-<div>
-  <p><%=@user.name%></p>
-
-  <p><%=@user.profession%></p>
-  <p><%=@user.email%></p>
+  <h2>Your complaint history</h2>
+    <div class="profile-info-container">
+      <% Complaint.where(user_id:@user.id).each do |complaint| %>
+      <p><strong>Description: </strong><%= complaint.description %></p>
+      <p><strong>Name: </strong><%= complaint.type.name %></p>
+      <p><%= complaint.upvote %> <i class="fas fa-thumbs-up"></i></p>
+    </div>
+  <% end %>
 </div>
-
-<p>Likes on your complaints:</p>
-<%= link_to image_tag("BIGLIKEICON.png", width: 85, height: 85) %>
-
-<h2>Your complaint history</h2>
-
-<% Complaint.where(user_id:@user.id).each do |complaint| %>
-<%= complaint.description %>
-<%= complaint.type.name %>
-<% end %>
-                                                        <%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %>
+<%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %>
 
 
 <%= link_to "log out", destroy_user_session_path, method: :delete%>
