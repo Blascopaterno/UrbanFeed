@@ -22,15 +22,19 @@
         <div class="upvote-complaints">
           <% if complaint.picture.present? %>
           <div class="complaint_image">
-          <%= cl_image_tag(complaint.picture, crop: :fill) %>
+            <%= cl_image_tag(complaint.picture, crop: :fill) %>
           </div>
           <% end %>
         </div>
-        </div>
-        <div class="upvote">
-          <%= complaint.upvote %><i class="fas fa-thumbs-up"></i>
+      </div>
+      <div class="upvote">
+        <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
+          <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
+          <%= render 'likes', complaint: complaint %>
+          <% end %>
         </div>
       </div>
+    </div>
 
   </div>
 </div>
