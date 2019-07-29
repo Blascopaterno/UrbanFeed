@@ -8,6 +8,6 @@ import mayorSelect from '../plugins/mayor_select';
 
 initMapbox();
 initAutocomplete();
-
 complaintBtns();
 mayorSelect();
+
