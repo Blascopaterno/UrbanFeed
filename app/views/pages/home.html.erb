@@ -13,17 +13,21 @@
       <p>Report incidences on your</p>
       <p>neighbourhood</p>
     </div>
-
-      <%= form_tag complaints_path, method: :get do %>
-        <div class="form_box">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control-style",
-            id: "complaint-address",
-            placeholder: "Hit go to use your location"
-         %>
-          <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
-        </div>
-      <% end %>
+  </div>
+  <div class="container-intro">
+    <p>Report incidences on your</p>
+    <p>neighbourhood</p>
+  </div>
+    <%= form_tag complaints_path, method: :get do %>
+      <div class="form_box">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control-style",
+          id: "complaint-address",
+          placeholder: "Introduce your location"
+       %>
+        <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
