@@ -1,4 +1,18 @@
-<h2>Citizen test show</h2>
-
-<%= @user.name %>
-<%= @user.profession %>
+<div class="userprofile-container">
+  <h2>Citizen profile</h2>
+  <div id="p-margins">
+    <p><strong>Name: </strong><%= @user.name %></p>
+    <p><strong>Profession: </strong><%= @user.profession %></p>
+  </div>
+  <h2><%= @user.name %>'s complaint history</h2>
+  <div class="profile-info-container">
+    <% Complaint.where(user_id:@user.id).each do |complaint| %>
+    <p><strong>Description: </strong><%= complaint.description %></p>
+    <p><strong>Type: </strong><%= complaint.type.name %></p>
+    <div class="upvote-container">
+      <p><%= complaint.upvote %><i class="fas fa-thumbs-up"></i></p>
+      <p><%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
