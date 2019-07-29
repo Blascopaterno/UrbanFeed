@@ -4,65 +4,67 @@
   <p>Please select account type</p>
 </div>
 
-<div class="signup-form-img">
-  <div class="citizen">
-    <%= link_to image_tag("citizen_icon.jpg", width: 100, height: 100) %>
-    <p><%= "I am a citizen" %></p>
-  </div>
-  <div class="politician">
-    <%= link_to image_tag("politician_icon.jpg", width: 100, height: 100) %>
-    <p><%= "I am a politician" %></p>
-  </div>
-</div>
+
 
 <div class="masha-form">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
+  <div class="signup-form-img">
+    <label class="checkbox">
+      <%= image_tag("politician_icon.jpg", width: 100, height: 100) %>
+      <%= f.input :mayor, as: :boolean, checked_value: true, unchecked_value: false, label: false, input_html: { class: "hidden" }%></label>
+      <p><%= "I am a politician" %></p>
+      <label class="checkbox" ><%= image_tag("citizen_icon.jpg", width: 100, height: 100)%>
+        <%= f.input :mayor, as: :boolean, checked_value: false, unchecked_value: true, label: false, input_html: { class: "hidden" }%></label>
+        <p><%= "I am a citizen" %></p>
+      </div>
 
-<div class="signup-form-inputs">
-  <div class="form-inputs">
-        <%= f.input :name,
-    required: true,
-    autofocus: true,
-    placeholder: "name",
-    input_html: { autocomplete: "name" }%>
+  <div class="signup-form-inputs">
+    <div class="form-inputs">
+      <%= f.input :name,
+      required: true,
+      autofocus: true,
+      placeholder: "name",
+      input_html: { autocomplete: "name" }%>
 
-    <%= f.input :profession,
-    required: true,
-    autofocus: true,
-    placeholder: "profession",
-    input_html: { autocomplete: "profession" }%>
+      <%= f.input :profession,
+      required: true,
+      autofocus: true,
+      placeholder: "profession",
+      input_html: { autocomplete: "profession" }%>
 
 
       <%= f.input :email,
-    required: true,
-    autofocus: true,
-    placeholder: "email",
-    input_html: { autocomplete: "email" }%>
+      required: true,
+      autofocus: true,
+      placeholder: "email",
+      input_html: { autocomplete: "email" }%>
 
       <%= f.input :password,
-    required: true,
-    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-    placeholder: "password",
-    input_html: { autocomplete: "new-password" } %>
+      required: true,
+      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+      placeholder: "password",
+      input_html: { autocomplete: "new-password" } %>
 
       <%= f.input :password_confirmation,
-    required: true,
-    placeholder: "confirm passwords",
-    input_html: { autocomplete: "new-password" } %>
+      required: true,
+      placeholder: "confirm passwords",
+      input_html: { autocomplete: "new-password" } %>
 
-    <%= f.input :mayor, as: :boolean, label: "Are you the Mayor?", label_html: {style: "display:block"}%>
+      <%#= f.input :mayor, as: :boolean, label: "Are you the Mayor?", label_html: {style: "display:block"}%>
+      <%#= link_to image_tag("citizen_icon.jpg", width: 100, height: 100) %>
+      <%#= link_to image_tag("politician_icon.jpg", width: 100, height: 100) %>
 
+        </div>
+      </div>
+
+
+<div class="form-actions">
+  <div class="btn-color">
+    <%= f.button :submit, "create account" %>
   </div>
 </div>
-
-
-  <div class="form-actions">
-    <div class="btn-color">
-      <%= f.button :submit, "create account" %>
-    </div>
-  </div>
-    <% end %>
+<% end %>
 
 </div>
 
