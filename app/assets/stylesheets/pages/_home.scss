@@ -32,9 +32,10 @@ body {
   font-size: 25px;
 }
 
-.blue-font {
+
+#display-inline-block {
   display: inline-block;
-  color: #5791FF;
+  color: $blue;
 }
 
 .homepage-container p {
