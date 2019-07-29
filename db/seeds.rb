@@ -6,6 +6,7 @@ User.delete_all
 puts"delete all data"
 
 User.create(email: 'test1@urbanfeed.org', password: '123456', name: "Test Uno" )
+User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Morten', profession: 'model', mayor: true)
 
 Type.create(name: "Bridge")
 Type.create(name: "Road")
