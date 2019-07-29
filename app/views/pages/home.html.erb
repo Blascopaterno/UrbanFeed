@@ -1,28 +1,29 @@
-
-<div class="homepage-container">
-  <div class="welcome-message">
-    <h2>Welcome to</h2>
-    <div class="container-intro">
-      <h1>Urban</h1>
-      <h1 id="display-inline-block" >Feed</h1>
-    </div>
-  </div>
-  <div class="container-intro">
-    <p>Report incidences on your</p>
-    <p>neighbourhood</p>
-  </div>
-
-    <%= form_tag complaints_path, method: :get do %>
-      <div class="form_box">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control-style",
-          id: "complaint-address",
-          placeholder: "Hit go to use your location"
-       %>
-        <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
+<% if user_signed_in? && current_user.mayor == true %>
+    <h1>mayor home page</h1>
+<% else %>
+  <div class="homepage-container">
+    <div class="welcome-message">
+      <h2>Welcome to</h2>
+      <div class="container-intro">
+        <h1>Urban</h1>
+        <h1 id="display-inline-block" >Feed</h1>
       </div>
-    <% end %>
-</div>
+    </div>
+    <div class="container-intro">
+      <p>Report incidences on your</p>
+      <p>neighbourhood</p>
+    </div>
 
-
+      <%= form_tag complaints_path, method: :get do %>
+        <div class="form_box">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control-style",
+            id: "complaint-address",
+            placeholder: "Hit go to use your location"
+         %>
+          <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
+        </div>
+      <% end %>
+  </div>
+<% end %>
