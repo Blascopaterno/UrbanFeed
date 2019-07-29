@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h2>Complaints around area</h2>
+</div>
+
+<div id="my-complaints">
+  <%= render @complaints %>
+</div>
+
+<div id="with-button">
+  <%= will_paginate %>
+</div>
+
+<% if @complaints.next_page %>
+  <div id="load_more_complaints" class="btn btn-primary btn-lg">More complaints</div>
+<% end %>

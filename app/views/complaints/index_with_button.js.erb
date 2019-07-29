@@ -1,0 +1,7 @@
+$('#my-complaints').append('<%= j render @complaints %>');
+<% if @complaints.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate @complaints %>');
+    $('.pagination').hide();
+<% else %>
+    $('.pagination, #load_more_complaints').remove();
+<% end %>
