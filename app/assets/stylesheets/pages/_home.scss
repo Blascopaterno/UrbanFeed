@@ -75,3 +75,19 @@ body {
     padding-top: 17px;
     color: gray;
 }
+
+#m-container-intro {
+  position: relative;
+}
+
+#m-sub-welcome {
+  position: absolute;
+  bottom: 1px;
+  right: 80px;
+}
+
+#m-sub-welcome p {
+  font-size: 15px;
+}
+
+

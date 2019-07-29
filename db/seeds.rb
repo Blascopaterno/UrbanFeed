@@ -25,6 +25,9 @@ Category.create(name: 'Quality')
 cat_1 = Category.find_by(name: 'Safety')
 cat_2 = Category.find_by(name: 'Maintenance')
 
+Region.create(name: 'Community of Madrid')
+Province.create(name: 'Province of Madrid', region: Region.last)
+City.create!(name: 'Madrid', province: Province.last)
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
@@ -33,6 +36,7 @@ complaint_1 = Complaint.new(
   user: User.last,
   category: cat_2,
   type: type_2,
+  city: City.last,
 )
 complaint_1.remote_picture_url = "https://upload.wikimedia.org/wikipedia/commons/9/92/Crack_along_the_road_at_Uranohama_Port.jpg"
 complaint_1.save
@@ -44,6 +48,7 @@ complaint_2 = Complaint.new(
   user: User.last,
   category: cat_1,
   type: type_1,
+  city: City.last,
 )
 complaint_2.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
 complaint_2.save
