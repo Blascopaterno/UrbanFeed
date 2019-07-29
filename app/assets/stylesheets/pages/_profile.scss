@@ -32,12 +32,15 @@
 }
 
 .profile-info-container {
+  border-top: 1px solid gray;
+}
+
+.profile-info-container p {
   margin-top: 20px;
 }
+
 
 .upvote-container {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid gray;
-  margin-bottom: 20px;
 }

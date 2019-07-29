@@ -1,4 +1,4 @@
-<h5><%= link_to complaint.description %></h5>
+<h5><%= link_to complaint.description, complaint_path(complaint) %></h5>
 <div class="upvote">
   <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
     <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
@@ -6,3 +6,6 @@
     <% end %>
   </div>
 </div>
+
+
+
