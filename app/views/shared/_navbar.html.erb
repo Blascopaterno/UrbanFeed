@@ -16,7 +16,7 @@
       <% if user_signed_in? %>
         <div id="padding-for-username">
           <%= link_to profile_path, id: "username-style" do%>
-            <% current_user.name %>
+             <%= current_user.name %><%= link_to image_tag("USERICON.png", width: 30, height: 30), root_path %>
           <% end %>
         </div>
       <% else %>
