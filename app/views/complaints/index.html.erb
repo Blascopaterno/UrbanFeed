@@ -32,14 +32,18 @@
 <div class="complaint-index-container">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
 
+<div id="btn-none-style">
+  <button onclick="myScroll()" id="myBtn" img ="scroll_arrow.png" title="Go to top"><%= link_to image_tag("scroll_arrow.png", width: 32, height: 28) %></button>
+</div>
+
 
   <div class="container">
-    <h5> Complaints around the area </h5>
+    <h5 id="scrollcomplaint"> Complaints around the area </h5>
     <% @complaints.each do |complaint| %>
     <div class="complaint-container">
       <hr class="separator">
       <div class="row">
-        <div class="col-8 ">
+        <div class="col-8 >
           <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
           <p> "<%= complaint.description %>" </p>
           <% end %>
@@ -77,6 +81,13 @@
 </div>
 
 
+<!-- Javascript for scrolling -->
+<script>
+  function myScroll() {
+    var elmnt = document.getElementById("scrollcomplaint");
+    elmnt.scrollIntoView();
+  }
+</script>
 
 
 
