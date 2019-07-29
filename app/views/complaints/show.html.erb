@@ -1,2 +1,9 @@
 <p><strong>Description: </strong><%= @complaint.description %></p>
+
 <p><strong>Address: </strong><%= @complaint.address %></p>
+
+<% if @complaint.picture.present? %>
+<div class="complaint_image">
+  <%= cl_image_tag(@complaint.picture, crop: :fill) %>
+</div>
+<% end %>
