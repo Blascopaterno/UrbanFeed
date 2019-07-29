@@ -6,11 +6,11 @@
 
 <div class="signup-form-img">
   <div class="citizen">
-    <%= link_to image_tag("citizen_icon.jpg", width: 100, height: 100) %>
+    <%= image_tag("citizen_icon.jpg", width: 100, height: 100) %>
     <p><%= "I am a citizen" %></p>
   </div>
   <div class="politician">
-    <%= link_to image_tag("politician_icon.jpg", width: 100, height: 100) %>
+    <%= image_tag("politician_icon.jpg", width: 100, height: 100) %>
     <p><%= "I am a politician" %></p>
   </div>
 </div>
@@ -51,7 +51,7 @@
     placeholder: "confirm passwords",
     input_html: { autocomplete: "new-password" } %>
 
-    <%= f.input :mayor, as: :boolean, label: "Are you the Mayor?", label_html: {style: "display:block"}%>
+    <%= f.input :mayor, as: :hidden %>
 
   </div>
 </div>
