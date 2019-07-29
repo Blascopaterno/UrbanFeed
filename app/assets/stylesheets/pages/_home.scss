@@ -59,7 +59,7 @@ body {
   margin-left: 25px;
   margin-right: 10px;
   background-color: #EEEEEE;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   font-weight: normal;
 }
@@ -68,7 +68,13 @@ body {
   margin-top: 40px;
 }
 
-//-----------------mayor css-------------------------
+.fa-location-arrow {
+    font-size: 20px;
+    padding-right: 15px;
+    margin-left: -50px;
+    padding-top: 17px;
+    color: gray;
+}
 
 #m-container-intro {
   position: relative;
@@ -83,27 +89,5 @@ body {
 #m-sub-welcome p {
   font-size: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
