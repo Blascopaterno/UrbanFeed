@@ -1,12 +1,12 @@
 <div id="city-container">
-  <h1>@city.name</h1>
+  <h1><%= @city.name %></h1>
   <div id="city-type-filter">
     <h3>filter your complaint by type:</h3>
     <div>
-      <%= Type.find_by(name: 'Bridge') %>
-      <%= Type.find_by(name: 'Parc') %>
-      <%= Type.find_by(name: 'Road') %>
-      <%= Type.find_by(name: 'Public Bulding') %>
+      <%= Type.find_by(name: 'Bridge').name %>
+      <%= Type.find_by(name: 'Parc').name %>
+      <%= Type.find_by(name: 'Road').name %>
+      <%= Type.find_by(name: 'Public Bulding').name %>
     </div>
   </div>
   <div id="map-container">
@@ -28,17 +28,21 @@
   <div id="city-category-filter">
     <h3>filter your complaint by category:</h3>
     <div>
-      <%= Category.find_by(name: 'Safety') %>
-      <%= Category.find_by(name: 'Maintenance') %>
-      <%= Category.find_by(name: 'Accessibility') %>
-      <%= Category.find_by(name: 'Sustainbility') %>
-      <%= Category.find_by(name: 'Quality') %>
+      <%= Category.find_by(name: 'Safety').name %>
+      <%= Category.find_by(name: 'Maintenance').name %>
+      <%= Category.find_by(name: 'Accessibility').name %>
+      <%= Category.find_by(name: 'Sustainbility').name %>
+      <%= Category.find_by(name: 'Quality').name %>
     </div>
   </div>
   <div>
     <h1>Complaints:</h1>
-    <% @city.complaints.each do |complaint| %>
-      <%= complaint.description %>
-    <% end %>
+    <div>
+      <% @city.complaints.each do |complaint| %>
+        <div>
+          <%= complaint.description %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
