@@ -30,11 +30,12 @@ body {
   color: black;
   font-weight: 800;
   font-size: 25px;
+
 }
 
 
 #display-inline-block {
-  display: inline-block;
+  // display: inline-block;
   color: $blue;
 }
 
@@ -84,10 +85,25 @@ body {
   position: absolute;
   bottom: 1px;
   right: 80px;
+  line-height:3px;
 }
 
 #m-sub-welcome p {
   font-size: 15px;
 }
 
+#actions {
+  padding-top:10px;
+  text-align: center;
+}
 
+.container-intro {
+  padding-top:15px;
+  padding-bottom:3px;
+
+}
+
+#tool {
+  text-align: center;
+  color: grey;
+}
