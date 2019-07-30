@@ -1,0 +1,48 @@
+<div id="city-container">
+  <h1><%= @city.name %></h1>
+  <div id="city-type-filter">
+    <h3>filter your complaint by type:</h3>
+    <div>
+      <%= Type.find_by(name: 'Bridge').name %>
+      <%= Type.find_by(name: 'Parc').name %>
+      <%= Type.find_by(name: 'Road').name %>
+      <%= Type.find_by(name: 'Public Bulding').name %>
+    </div>
+  </div>
+  <div id="map-container">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 380px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    <% if @results.present?%>
+      data-latitude="<%= @results[0] %>"
+      data-longitude="<%= @results[1] %>"
+    <% else %>
+      data-latitude="40.4165"
+      data-longitude="-3.70256"
+    <% end %>
+    ></div>
+  </div>
+  <div id="city-category-filter">
+    <h3>filter your complaint by category:</h3>
+    <div>
+      <%= Category.find_by(name: 'Safety').name %>
+      <%= Category.find_by(name: 'Maintenance').name %>
+      <%= Category.find_by(name: 'Accessibility').name %>
+      <%= Category.find_by(name: 'Sustainbility').name %>
+      <%= Category.find_by(name: 'Quality').name %>
+    </div>
+  </div>
+  <div>
+    <h1>Complaints:</h1>
+    <div>
+      <% @city.complaints.each do |complaint| %>
+        <div>
+          <%= complaint.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

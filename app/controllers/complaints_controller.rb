@@ -46,7 +46,10 @@ class ComplaintsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @complaint = Complaint.find(params[:id])
+    @complaint.destroy
+    redirect_to profile_path
   end
 
   def upvote

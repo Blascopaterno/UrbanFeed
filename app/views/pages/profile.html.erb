@@ -17,13 +17,14 @@
       <p><strong>Type: </strong><%= complaint.type.name %></p>
       <div class="upvote-container">
         <p><%= complaint.upvote %><i class="fas fa-thumbs-up"></i></p>
-        <p><%= link_to image_tag("DELETEICON.png", width: 20, height: 28) %></p>
+        <p><%= link_to image_tag("DELETEICON.png", width: 20, height: 28), complaint_path(complaint), method: :delete %></p>
       </div>
     </div>
   <% end %>
 </div>
 
-
+<%= link_to 'Back', complaints_path %>
 
 <%= link_to "log out", destroy_user_session_path, method: :delete%>
+
 

@@ -10,48 +10,62 @@
   <div class="signup-form-img">
     <div class="politician">
     <label class="checkbox">
-      <%= image_tag("politician_icon.jpg", width: 100, height: 100) %>
+      <%= image_tag("politician_icon.jpg", width: 130, height: 110) %>
       <%= f.input :mayor, as: :boolean, checked_value: true, unchecked_value: false, label: false, input_html: { class: "hidden" }%></label>
-      <p><%= "I am a politician" %></p>
       </div>
       <div class="citizen">
-      <label class="checkbox" ><%= image_tag("citizen_icon.jpg", width: 100, height: 100)%>
+      <label class="checkbox" ><%= image_tag("citizen_icon.jpg", width: 130, height: 110)%>
         <%= f.input :mayor, as: :boolean, checked_value: false, unchecked_value: true, label: false, input_html: { class: "hidden" }%></label>
-        <p><%= "I am a citizen" %></p>
         </div>
       </div>
+
+<p>              </p>
+ <div class="signup-form-intro">
+  <p>*Compulsory fields</p>
+  </div>
 
   <div class="signup-form-inputs">
     <div class="form-inputs">
       <%= f.input :name,
       required: true,
       autofocus: true,
-      placeholder: "name",
+      placeholder: "      name                                               *",
       input_html: { autocomplete: "name" }%>
+      <i class="fas fa-user"></i>
+
+      <%= f.association :city,
+      required: true,
+      autofocus: true,
+      placeholder: "city",
+      input_html: { autocomplete: "city" }%>
+      <i class="fas fa-home"></i>
 
       <%= f.input :profession,
       required: true,
       autofocus: true,
-      placeholder: "profession",
+      placeholder: "      profession",
       input_html: { autocomplete: "profession" }%>
-
+      <i class="fas fa-briefcase"></i>
 
       <%= f.input :email,
       required: true,
       autofocus: true,
-      placeholder: "email",
+      placeholder: "      email                                               *",
       input_html: { autocomplete: "email" }%>
+      <i class="fas fa-envelope"></i>
 
       <%= f.input :password,
       required: true,
       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      placeholder: "password",
+      placeholder: "      password                                        *",
       input_html: { autocomplete: "new-password" } %>
+      <i class="fas fa-lock" id= "initial"></i>
 
       <%= f.input :password_confirmation,
       required: true,
-      placeholder: "confirm passwords",
+      placeholder: "      confirm password                          *",
       input_html: { autocomplete: "new-password" } %>
+      <i class="fas fa-lock" id= "confirmation"></i>
 
         </div>
       </div>
