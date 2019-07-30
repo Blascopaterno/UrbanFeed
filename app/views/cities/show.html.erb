@@ -33,16 +33,6 @@
     <% end %>
     ></div>
   </div>
-  <div id="city-category-filter">
-    <h3>filter your complaint by category:</h3>
-    <div>
-      <%= Category.find_by(name: 'Safety').name %>
-      <%= Category.find_by(name: 'Maintenance').name %>
-      <%= Category.find_by(name: 'Accessibility').name %>
-      <%= Category.find_by(name: 'Sustainbility').name %>
-      <%= Category.find_by(name: 'Quality').name %>
-    </div>
-  </div>
   <div>
     <h1>Complaints:</h1>
     <div>
