@@ -10,23 +10,25 @@
   <div class="signup-form-img">
     <div class="politician">
     <label class="checkbox">
-      <%= image_tag("politician_icon.jpg", width: 100, height: 100) %>
+      <%= image_tag("politician_icon.jpg", width: 130, height: 110) %>
       <%= f.input :mayor, as: :boolean, checked_value: true, unchecked_value: false, label: false, input_html: { class: "hidden" }%></label>
-      <p><%= "I am a politician" %></p>
       </div>
       <div class="citizen">
-      <label class="checkbox" ><%= image_tag("citizen_icon.jpg", width: 100, height: 100)%>
+      <label class="checkbox" ><%= image_tag("citizen_icon.jpg", width: 130, height: 110)%>
         <%= f.input :mayor, as: :boolean, checked_value: false, unchecked_value: true, label: false, input_html: { class: "hidden" }%></label>
-        <p><%= "I am a citizen" %></p>
         </div>
       </div>
+
+ <div class="signup-form-intro">
+  <p>*Compulsory fields</p>
+  </div>
 
   <div class="signup-form-inputs">
     <div class="form-inputs">
       <%= f.input :name,
       required: true,
       autofocus: true,
-      placeholder: "name",
+      placeholder: "name                                               *",
       input_html: { autocomplete: "name" }%>
 
       <%= f.input :profession,
@@ -39,18 +41,18 @@
       <%= f.input :email,
       required: true,
       autofocus: true,
-      placeholder: "email",
+      placeholder: "email                                               *",
       input_html: { autocomplete: "email" }%>
 
       <%= f.input :password,
       required: true,
       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      placeholder: "password",
+      placeholder: "password                                        *",
       input_html: { autocomplete: "new-password" } %>
 
       <%= f.input :password_confirmation,
       required: true,
-      placeholder: "confirm passwords",
+      placeholder: "confirm password                          *",
       input_html: { autocomplete: "new-password" } %>
 
       <%= f.input :mayor, as: :hidden %>
