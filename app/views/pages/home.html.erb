@@ -19,7 +19,7 @@
     <p id= tool>Select a tool :</p>
 
     <div id="actions">
-      <%= link_to supermap_path do %>
+      <%= link_to city_path(current_user.city) do %>
         <%= image_tag('MAPTOOL-ICON.png', width: 140, height: 140) %>
       <% end %>
       <%= link_to emails_path do %>
