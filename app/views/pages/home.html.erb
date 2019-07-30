@@ -1,31 +1,29 @@
 <% if user_signed_in? && current_user.mayor == true %>
   <div class="homepage-container">
+    <div class="presentation">
+      <div class="welcome-message">
+        <h2>Welcome to</h2>
 
-    <div class="welcome-message">
-      <h2>Welcome to</h2>
-
-      <div class="container-intro" id="m-container-intro">
-        <h1>Urban</h1>
-        <h1 id="display-inline-block" >Feed</h1>
-        <div id="m-sub-welcome"><p>Politician</p></div>
+        <div class="container-intro" id="m-container-intro">
+          <h1>Urban</h1>
+          <h1 id="display-inline-block" >Feed</h1>
+          <div id="m-sub-welcome"><p>Politician</p></div>
+        </div>
       </div>
-
     </div>
 
     <div class="container-intro">
-      <p>Target the maximum amout</p>
-      <p>of citizens - we will get</p>
-      <p>them to vote for you!</p>
+      <p id = "p-intro">Target the maximum amout of citizens - we will get them to vote for you!</p>
     </div>
 
     <p id= tool>Select a tool :</p>
 
     <div id="actions">
-      <%= link_to city_path(current_user.city_id) do %>
-        <%= image_tag('MAPTOOL-ICON.png', width: 100, height: 100) %>
+      <%= link_to supermap_path do %>
+        <%= image_tag('MAPTOOL-ICON.png', width: 140, height: 140) %>
       <% end %>
       <%= link_to emails_path do %>
-        <%= image_tag('EMAILTOOL-ICON.png', width: 100, height: 100) %>
+        <%= image_tag('EMAILTOOL-ICON.png', width: 140, height: 140) %>
       <% end %>
     </div>
 
