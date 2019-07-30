@@ -5,8 +5,12 @@ User.delete_all
 
 puts"delete all data"
 
-User.create(email: 'test1@urbanfeed.org', password: '123456', name: "Test Uno" )
-User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Morten', profession: 'model', mayor: true)
+Region.create(name: 'Community of Madrid')
+Province.create(name: 'Province of Madrid', region: Region.last)
+City.create!(name: 'Madrid', province: Province.last)
+
+User.create(email: 'test1@urbanfeed.org', password: '123456', name: "Test Uno", city_id: 1 )
+User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Morten', profession: 'model', mayor: true, city_id: 1)
 
 Type.create(name: "Bridge")
 Type.create(name: "Road")
@@ -24,10 +28,6 @@ Category.create(name: 'Quality')
 
 cat_1 = Category.find_by(name: 'Safety')
 cat_2 = Category.find_by(name: 'Maintenance')
-
-Region.create(name: 'Community of Madrid')
-Province.create(name: 'Province of Madrid', region: Region.last)
-City.create!(name: 'Madrid', province: Province.last)
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
