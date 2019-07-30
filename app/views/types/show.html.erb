@@ -1,3 +1,56 @@
-<h1>Type#show</h1>
-<p>Find me in app/views/type/show.html.erb</p>
+<div id="city-container">
+  <h1><%= current_user.city.name %></h1>
+  <div id="city-type-filter">
+    <h3>filter your complaint by type:</h3>
+    <div>
+      <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
+        <%= Type.find_by(name: 'Bridge').name %>
+      <% end %>
+      <%= link_to type_path(Type.find_by(name: 'Parc')) do %>
+        <%= Type.find_by(name: 'Parc').name %>
+      <% end %>
+      <%= link_to type_path(Type.find_by(name: 'Road')) do %>
+        <%= Type.find_by(name: 'Road').name %>
+      <% end %>
+      <%= link_to type_path(Type.find_by(name: 'Public Bulding')) do %>
+        <%= Type.find_by(name: 'Public Bulding').name %>
+      <% end %>
+    </div>
+  </div>
+  <div id="map-container">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 380px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    <% if @results.present?%>
+      data-latitude="<%= @results[0] %>"
+      data-longitude="<%= @results[1] %>"
+    <% else %>
+      data-latitude="40.4165"
+      data-longitude="-3.70256"
+    <% end %>
+    ></div>
+  </div>
+  <h1>Complaints:</h1>
+  <div>
+    <% @type.complaints.each do |complaint| %>
+        <div class="complaint-container">
+          <hr class="separator">
+          <div class="row">
+            <div class="col-8" >
+              <%= complaint.description %>
+            </div>
+            <div class="col-4 upvote-complaints">
+                <%= complaint.upvote %>
+              <div class="tag">
+                <%= complaint.type.name %>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
 

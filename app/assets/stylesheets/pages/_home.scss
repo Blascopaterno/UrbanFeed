@@ -40,13 +40,15 @@ body {
 }
 
 .homepage-container p {
-  margin: 0;
+  margin: -3px;
+  text-align: justify;
 }
 
 .welcome-message h2 {
   margin: 0;
   margin-top: 40px;
   margin-bottom: -12px;
+  position:relative;
 }
 
 .form_box {
@@ -65,6 +67,9 @@ body {
   font-weight: normal;
 }
 
+.presentation {
+  margin-bottom:13px;
+}
 .form_box {
   margin-top: 40px;
 }
@@ -78,32 +83,40 @@ body {
 }
 
 #m-container-intro {
-  position: relative;
+  text-align: justify;
+
 }
 
 #m-sub-welcome {
   position: absolute;
-  bottom: 1px;
-  right: 80px;
+  right: 93px;
   line-height:3px;
 }
 
 #m-sub-welcome p {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 #actions {
   padding-top:10px;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .container-intro {
-  padding-top:15px;
-  padding-bottom:3px;
+  padding-top: 15px;
+  padding-bottom: 3px;
 
 }
 
 #tool {
   text-align: center;
   color: grey;
+  padding-top:16px;
+  margin-top:19px;
+}
+
+#p-intro {
+  margin-top: 34px;
 }
