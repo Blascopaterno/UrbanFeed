@@ -29,7 +29,7 @@
       </div>
       <div class="upvote">
         <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
-          <%= link_to upvote_path(complaint: complaint),method: :put, remote: :true do %>
+          <%= link_to upvote_path(complaint:complaint),method: :put, remote: :true do %>
           <%= render 'likes', complaint: complaint %>
           <% end %>
         </div>
@@ -38,3 +38,4 @@
 
   </div>
 </div>
+
