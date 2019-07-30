@@ -1,5 +1,5 @@
 <div id="city-container">
-  <h1><%= @city.name %></h1>
+  <h1 id="city-name"><%= @city.name %></h1>
   <div id="city-type-filter">
     <h3>filter your complaint by type:</h3>
     <div>
@@ -33,14 +33,26 @@
     <% end %>
     ></div>
   </div>
-  <div>
-    <h1>Complaints:</h1>
+  <div class="complaint-container">
+    <h1 id="complaints">Complaints:</h1>
     <div>
       <% @city.complaints.each do |complaint| %>
-        <div>
-          <%= complaint.description %>
+        <div class="complaint-container">
+          <hr class="separator">
+          <div class="row">
+            <div class="col-8" >
+              <%= complaint.description %>
+            </div>
+            <div class="col-4 upvote-complaints">
+                <%= complaint.upvote %>
+              <div class="tag">
+                <%= complaint.type.name %>
+              </div>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
