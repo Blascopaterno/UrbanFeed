@@ -17,7 +17,8 @@ class ComplaintsController < ApplicationController
     @markers = @complaints.map do |complaint|
       {
         lat: complaint.latitude,
-        lng: complaint.longitude
+        lng: complaint.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { complaint: complaint })
       }
     end
   end
