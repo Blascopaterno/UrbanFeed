@@ -31,6 +31,12 @@
       placeholder: "name                                               *",
       input_html: { autocomplete: "name" }%>
 
+      <%= f.association :city,
+      required: true,
+      autofocus: true,
+      placeholder: "city",
+      input_html: { autocomplete: "city" }%>
+
       <%= f.input :profession,
       required: true,
       autofocus: true,
