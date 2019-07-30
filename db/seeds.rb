@@ -50,7 +50,7 @@ complaint_2 = Complaint.new(
   upvote: 5,
   user: User.last,
   category: cat_1,
-  type: type_2,
+  type: type_1,
   city: City.find(1),
 )
 complaint_2.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
