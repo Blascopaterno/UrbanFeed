@@ -9,12 +9,11 @@
       <% end %>
     </div>
   </div>
-<div class="signup-form-intro">
-<p>Click a pin <%= link_to image_tag("PINICON.png", width: 16, height: 20), root_path %> to view complaints:</p>
+  <div class="signup-form-intro">
+    <p>Click a pin <%= link_to image_tag("PINICON.png", width: 16, height: 20), root_path %> to view complaints:</p>
+  </div>
 </div>
 
-
-</div>
 <div id="map-container">
   <div
   id="map"
@@ -31,36 +30,38 @@
   <% end %>
   ></div>
 </div>
+
 <div class="complaint-index-container">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
 
-<div id="btn-none-style">
-  <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
-</div>
+  <div id="btn-none-style">
+    <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
+  </div>
 
 
   <div class="container">
     <h5 id="scrollcomplaint"> Complaints around the area </h5>
     <% @complaints.each do |complaint| %>
-    <div class="complaint-container">
-      <hr class="separator">
-      <div class="row">
-        <div class="col-8" >
-          <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
-            <p> "<%= complaint.description %>" </p>
-          <% end %>
-        </div>
+      <div class="complaint-container">
+        <hr class="separator">
+        <div class="row">
+          <div class="col-8" >
+            <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+              <p> "<%= complaint.description %>" </p>
+            <% end %>
+          </div>
 
-        <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
-            <%= render 'likes', complaint: complaint %>
-       <div class="tag">
-        <%= complaint.type.name %>
+          <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
+              <%= render 'likes', complaint: complaint %>
+            <div class="tag">
+              <%= complaint.type.name %>
+            </div>
+          </div>
+        </div>
+        <%= render 'show', complaint: complaint  %>
       </div>
-    </div>
+    <% end %>
   </div>
-  <%= render 'show', complaint: complaint  %>
-  <% end %>
-</div>
 </div>
 
 <!-- Modal for new complaint -->
