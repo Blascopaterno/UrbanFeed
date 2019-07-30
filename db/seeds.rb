@@ -18,7 +18,9 @@ Type.create(name: "Parc")
 Type.create(name: "Public Bulding")
 
 type_1 = Type.find_by(name: 'Bridge')
-type_2 = Type.find_by(name: "Road")
+type_2 = Type.find_by(name: 'Road')
+type_3 = Type.find_by(name: 'Parc')
+type_4 = Type.find_by(name: 'Public Bulding')
 
 Category.create(name: 'Safety')
 Category.create(name: 'Maintenance')
@@ -28,6 +30,7 @@ Category.create(name: 'Quality')
 
 cat_1 = Category.find_by(name: 'Safety')
 cat_2 = Category.find_by(name: 'Maintenance')
+cat_3 = Category.find_by(name: 'Accessibility')
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
@@ -47,10 +50,46 @@ complaint_2 = Complaint.new(
   upvote: 5,
   user: User.last,
   category: cat_1,
-  type: type_1,
+  type: type_2,
   city: City.find(1),
 )
 complaint_2.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
 complaint_2.save
 
+complaint_3 = Complaint.new(
+  description: 'To much dogs in the park i am scared for my child',
+  address: "1 calle Juan de Urbieta",
+  upvote: 10,
+  user: User.last,
+  category: cat_1,
+  type: type_3,
+  city: City.find(1),
+)
+complaint_3.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
+complaint_3.save
+
+complaint_4 = Complaint.new(
+  description: 'The hospital is not efficient',
+  address: "1 calle del Ancora",
+  upvote: 2,
+  user: User.last,
+  category: cat_2,
+  type: type_4,
+  city: City.find(1),
+)
+complaint_4.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
+complaint_4.save
+
 puts"create all data"
+
+
+
+
+
+
+
+
+
+
+
+
