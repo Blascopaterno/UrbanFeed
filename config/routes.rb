@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :cities, only: [:show]
 
+  resources :types, only: [:show]
+
   resources :users # Masha created thos route to be able to see the profile that is does not belong to the current user
 
   post "upvote", to: "complaints#upvote", as: :upvote
