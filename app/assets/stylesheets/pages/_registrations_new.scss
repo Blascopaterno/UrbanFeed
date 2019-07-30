@@ -2,8 +2,8 @@ abbr[title="required"] {
   display: none;
 }
 
-.masha-form label {
-  display: block;
+.form-inputs label {
+  display: none;
 }
 
 .masha-form {
@@ -11,7 +11,7 @@ abbr[title="required"] {
 }
 
 .signup-form-inputs {
-  text-align:left;
+  text-align: center;
   padding: 18px;
 }
 
@@ -90,3 +90,6 @@ abbr[title="required"] {
   padding: 5px;
 }
 
+.form-actions {
+  margin-bottom: 40px;
+}
