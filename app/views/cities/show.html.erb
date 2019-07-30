@@ -49,7 +49,9 @@
           <hr class="separator">
           <div class="row">
             <div class="col-8" >
-              <%= complaint.description %>
+              <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+                <p> "<%= complaint.description %>" </p>
+              <% end %>
             </div>
             <div class="col-4 upvote-complaints">
                 <%= complaint.upvote %>
@@ -58,6 +60,7 @@
               </div>
             </div>
           </div>
+            <%= render 'showcity', complaint: complaint  %>
         </div>
       <% end %>
     </div>
