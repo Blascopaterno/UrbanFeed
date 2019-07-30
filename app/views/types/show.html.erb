@@ -36,9 +36,20 @@
   <h1>Complaints:</h1>
   <div>
     <% @type.complaints.each do |complaint| %>
-      <div>
-        <%= complaint.description %>
-      </div>
+        <div class="complaint-container">
+          <hr class="separator">
+          <div class="row">
+            <div class="col-8" >
+              <%= complaint.description %>
+            </div>
+            <div class="col-4 upvote-complaints">
+                <%= complaint.upvote %>
+              <div class="tag">
+                <%= complaint.type.name %>
+              </div>
+            </div>
+          </div>
+        </div>
     <% end %>
   </div>
 </div>
