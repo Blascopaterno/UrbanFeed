@@ -47,6 +47,8 @@ class ComplaintsController < ApplicationController
   end
 
   def delete
+    @complaint = Complaint.find(params[:id])
+    @complaint.destroy
   end
 
   def upvote
