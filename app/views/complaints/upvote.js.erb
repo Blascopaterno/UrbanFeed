@@ -1,3 +1,7 @@
+var currentNumber = document.querySelector("[data-upvote='complaint-<%= @complaint.id %>']")
 
+var newNumber = parseInt(currentNumber.innerText) + 1
+
+currentNumber.innerText = newNumber
 
 
