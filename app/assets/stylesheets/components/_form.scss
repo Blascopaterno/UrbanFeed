@@ -35,6 +35,7 @@ flex-direction: column;
   text-align: center;
 }
 
+
 // .btn-flat {
 //   color: #4A4A4A;
 //   border: 1px solid #4A4A4A;
@@ -171,6 +172,13 @@ flex-direction: column;
     color: rgba(81, 81, 81, 0.53);
     }
 
+.signup-instruction p {
+    font-size: 13px;
+    color: rgba(81, 81, 81, 0.53);
+    position: relative;
+    left: -55px;
+    top: 20px;
+}
 
 
 
