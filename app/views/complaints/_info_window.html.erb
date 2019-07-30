@@ -1,5 +1,5 @@
 
-<h5><%= link_to complaint.description, complaint_path(complaint) %></h5>
+<h5><%= link_to complaint.description, complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}"  %></h5>
 
 <div class="upvote">
   <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >

@@ -14,7 +14,7 @@ User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Mort
 
 Type.create(name: "Bridge")
 Type.create(name: "Road")
-Type.create(name: "Parc")
+Type.create(name: "Park")
 Type.create(name: "Public Bulding")
 
 type_1 = Type.find_by(name: 'Bridge')

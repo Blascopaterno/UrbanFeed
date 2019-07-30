@@ -5,9 +5,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { complaintBtns } from '../components/complaint_btns';
 import {initAutocomplete} from '../plugins/init_autocomplete';
 import mayorSelect from '../plugins/mayor_select';
+import initPhotoUpload from "../plugins/photo_uploader";
 
 initMapbox();
 initAutocomplete();
 complaintBtns();
 mayorSelect();
-
+initPhotoUpload();

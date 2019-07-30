@@ -4,6 +4,6 @@
       <%= f.input :address %></dt>
       <%= f.input :category,
                   collection: ["Safety", "Maintenance", "Accessibility", "Sustainbility", "Quality"]%>
-        <%= f.input :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: ["Bridge", "Road", "Parc", "Public Building"] %>
+        <%= f.input :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: ["Bridge", "Road", "Park", "Public Building"] %>
       <%= f.submit class: "btn-flat-create" %>
   <% end %>
