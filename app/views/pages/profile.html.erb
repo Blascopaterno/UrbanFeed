@@ -17,7 +17,7 @@
       <p><strong>Type: </strong><%= complaint.type.name %></p>
       <div class="upvote-container">
         <p><%= complaint.upvote %><i class="fas fa-thumbs-up"></i></p>
-        <p><%= link_to image_tag("DELETEICON.png", width: 20, height: 28), complaint_path(complaint) %></p>
+        <p><%= link_to image_tag("DELETEICON.png", width: 20, height: 28), complaint_path(complaint), method: :delete %></p>
       </div>
     </div>
   <% end %>
