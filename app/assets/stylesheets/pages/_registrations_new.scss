@@ -86,10 +86,24 @@ abbr[title="required"] {
 }
 
 .user-mayor-selected {
-  border: outset 5px lightgrey;
+  border: outset 5px rgba(87, 145, 255, 0.2);
+  border-radius: 10%;
   padding: 5px;
 }
 
 .form-actions {
   margin-bottom: 40px;
+}
+
+.politician {
+    height: 130px;
+    width: 150px;
+
+
+}
+
+.citizen {
+    height: 130px;
+    width: 150px;
+
 }
