@@ -31,11 +31,11 @@
   ></div>
 </div>
 
-<div class="complaint-index-container">
+<div class="complaint-index-container" id="complaint-index-container" style="min-height:600px;">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
 
   <div id="btn-none-style">
-    <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
+    <button onclick="scrollWin()" id="myBtn" ><%= image_tag("scroll_arrow_down.png", id: "imgChange", width: 32, height: 28) %></button>
   </div>
 
 
@@ -84,10 +84,20 @@
 
 <!-- Javascript for scrolling -->
 <script>
-  function scrollWin(x, y) {
-    window.scrollBy(x, y);
-  }
-</script>
+      var toggle = false;
+    var img = document.getElementById('imgChange').src;
+    var el =   document.getElementById('complaint-index-container');
+    function scrollWin() {
+        if (toggle === true) {
+            document.getElementById('imgChange').src = '/assets/scroll_arrow_down.png';
+           window.scrollTo(0, -600);
+        } else {
+            document.getElementById('imgChange').src = '/assets/scroll_arrow.png';
+            el.scrollIntoView();
+        }
+        toggle = !toggle;
+    }
+  </script>
 
 
 
