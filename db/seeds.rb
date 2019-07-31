@@ -11,6 +11,7 @@ City.create!(name: 'Madrid', province: Province.last)
 
 User.create(email: 'test1@urbanfeed.org', password: '123456', name: "Test Uno", city_id: 1 )
 User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Morten', profession: 'model', mayor: true, city_id: 1)
+User.create(email: 'valentin.abeille@elysee.fr', password: 'Presidency', name: 'Valentin ABEILLE', profession: 'President of the French Republic', mayor: true, city_id: 1)
 
 Type.create(name: "Bridge")
 Type.create(name: "Road")
