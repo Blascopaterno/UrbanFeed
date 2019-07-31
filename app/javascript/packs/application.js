@@ -8,7 +8,8 @@ import mayorSelect from '../plugins/mayor_select';
 import initPhotoUpload from "../plugins/photo_uploader";
 
 initMapbox();
-initAutocomplete();
+initAutocomplete("complaint_address");
+initAutocomplete("complaint-address");
 complaintBtns();
 mayorSelect();
 initPhotoUpload();
