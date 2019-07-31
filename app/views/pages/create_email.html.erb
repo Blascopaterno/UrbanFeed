@@ -1,0 +1,30 @@
+<%= link_to "Return to added complaints" %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="email-container">
+      <h2>EMAIL TOOL</h2>
+      <p>Write an email to send to every single citizen who has posted and liked your chosen complaint.
+      </p>
+    </div>
+    <form role="form" method="post" id="reused_form">
+
+      <div class="row row-margins">
+        <div class="col-sm-6 form-group">
+          <!--             <label for="name">
+            Subject:</label> -->
+          <input type="text" class="form-control" id="name" placeholder="Subject" name="name" required>
+        </div>
+      </div>
+      <div class="row row-margins">
+        <div class="col-sm-12 form-group">
+          <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Your message" maxlength="6000" rows="7"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="email-container">
+  <%= link_to "Send email", emails_path, id: "sweet-alert-demo", class: "btn btn-primary" %>
+</div>
