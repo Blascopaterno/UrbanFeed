@@ -53,6 +53,7 @@ body {
 
 .form_box {
   display: flex;
+  position: relative;
 }
 
 .form-control-style {
@@ -76,10 +77,13 @@ body {
 
 .fa-location-arrow {
     font-size: 20px;
-    padding-right: 15px;
-    margin-left: -50px;
-    padding-top: 17px;
+    // padding-right: 15px;
+    // margin-left: -50px;
+    // padding-top: 17px;
     color: gray;
+    position: absolute;
+    top: 15px;
+    right: 75px;
 }
 
 #m-container-intro {
@@ -120,3 +124,22 @@ body {
 #p-intro {
   margin-top: 34px;
 }
+
+.home_form {
+  .ap-input-icon {
+    display: none;
+  }
+  .form-control-style {
+    width: 100%;
+    margin: 0px;
+  }
+  .square-btn-blue {
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+  .algolia-places {
+    margin-left: 40px;
+    margin-right: 7px;
+  }
+}
+

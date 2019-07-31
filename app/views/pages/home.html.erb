@@ -43,13 +43,12 @@
     </div>
   </div>
     <%= form_tag complaints_path, method: :get do %>
-      <div class="form_box">
+      <div class="form_box home_form">
         <%= text_field_tag :query,
           params[:query],
           class: "form-control-style",
           id: "complaint-address",
-          placeholder: "  Introduce your location"
-       %>
+          placeholder: "  Introduce your location"%>
        <i class="fas fa-location-arrow"></i>
         <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
       </div>
