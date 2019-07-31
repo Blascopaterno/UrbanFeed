@@ -62,18 +62,15 @@
               <% end %>
             </div>
             <div class="col-4 upvote-complaints">
-              <div class="upvote" >
-                <%= complaint.upvote %>
-                <i class="fas fa-thumbs-up" class="blue-font"></i>
-              </div>
-
+              <i class="fas fa-thumbs-up" class="blue-font"></i>
+              <%= complaint.upvote %>
               <div class="tag">
                 <%= complaint.type.name %>
               </div>
               <div>
-                <%= link_to basket_path(complaint: complaint), method: :post do %>
-                  <p>+</p>
-                <% end %>
+                  <%= link_to basket_path(complaint: complaint), method: :post do %>
+                    <p>+</p>
+                  <% end %>
               </div>
             </div>
           </div>
