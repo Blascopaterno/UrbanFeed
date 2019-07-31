@@ -3,7 +3,6 @@
   <div id="city-type-filter">
     <h3>filter your complaint by type:</h3>
   </div>
-</div>
   <div id="margins-type">
     <span class="tag type">
       <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
@@ -54,7 +53,9 @@
         <hr class="separator">
         <div class="row">
           <div class="col-8" >
-            <%= complaint.description %>
+            <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+              <p> "<%= complaint.description %>" </p>
+            <% end %>
           </div>
           <div class="col-4 upvote-complaints">
             <%= complaint.upvote %>
@@ -63,13 +64,15 @@
             </div>
           </div>
         </div>
+        <%= render 'showtypes', complaint: complaint  %>
       </div>
       <% end %>
     </div>
   </div>
-
+</div>
 <script>
   function scrollWin(x, y) {
     window.scrollBy(x, y);
   }
 </script>
+
