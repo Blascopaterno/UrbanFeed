@@ -7,10 +7,14 @@
       autofocus: true,
       placeholder: "email",
       input_html: { autocomplete: "email" } %>
+         <i class="fas fa-envelope"></i>
       <%= f.input :password,
       required: false,
       placeholder: "password",
       input_html: { autocomplete: "current-password" } %>
+       <div class="lock-icon-login">
+      <i class="fas fa-lock" id= "initial"></i>
+      </div>
     </div>
   </div>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
