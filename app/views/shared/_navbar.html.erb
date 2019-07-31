@@ -16,7 +16,10 @@
   <div id="flex">
     <div id="padding-for-signup">
       <% unless user_signed_in? %>
-        <%= link_to 'sign up', new_user_registration_path, id: "signup-link"%>
+        <%= link_to 'sign up', new_user_registration_path, class: "signup-link"%>
+      <% end %>
+      <% if user_signed_in? && current_user.mayor == true %>
+        <%= link_to '[\/]', emails_path, class: "signup-link" %>
       <% end %>
     </div>
 
