@@ -1,7 +1,7 @@
 import places from 'places.js';
 
-const initAutocomplete = () => {
-  const addressInput = document.getElementById('complaint_address');
+const initAutocomplete = (id) => {
+  const addressInput = document.getElementById(id);
   if (addressInput) {
     places({ container: addressInput });
   }
