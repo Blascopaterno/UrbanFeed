@@ -20,7 +20,7 @@ Type.create(name: "Public Bulding")
 
 type_1 = Type.find_by(name: 'Bridge')
 type_2 = Type.find_by(name: 'Road')
-type_3 = Type.find_by(name: 'Parc')
+type_3 = Type.find_by(name: 'Park')
 type_4 = Type.find_by(name: 'Public Bulding')
 
 Category.create(name: 'Safety')
@@ -35,7 +35,7 @@ cat_3 = Category.find_by(name: 'Accessibility')
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
-  address: "20 calle Ancora, Madrid",
+  address: "20 calle del Ancorà",
   upvote: 3,
   user: User.last,
   category: cat_2,
@@ -43,7 +43,7 @@ complaint_1 = Complaint.new(
   city: City.find(1),
 )
 complaint_1.remote_picture_url = "https://upload.wikimedia.org/wikipedia/commons/9/92/Crack_along_the_road_at_Uranohama_Port.jpg"
-complaint_1.save
+complaint_1.save!
 
 complaint_2 = Complaint.new(
   description: 'The bridge barrier are not high enough',
@@ -55,11 +55,11 @@ complaint_2 = Complaint.new(
   city: City.find(1),
 )
 complaint_2.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
-complaint_2.save
+complaint_2.save!
 
 complaint_3 = Complaint.new(
   description: 'To much dogs in the park i am scared for my child',
-  address: "1 calle Juan de Urbieta",
+  address: "parque del retiro, madrid",
   upvote: 10,
   user: User.last,
   category: cat_1,
@@ -67,7 +67,7 @@ complaint_3 = Complaint.new(
   city: City.find(1),
 )
 complaint_3.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
-complaint_3.save
+complaint_3.save!
 
 complaint_4 = Complaint.new(
   description: 'The hospital is not efficient',
@@ -79,7 +79,7 @@ complaint_4 = Complaint.new(
   city: City.find(1),
 )
 complaint_4.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26-crop-u9196.jpg?crc=322984659"
-complaint_4.save
+complaint_4.save!
 
 puts"create all data"
 
