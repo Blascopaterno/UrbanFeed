@@ -1,8 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="nav-height">
-  <%= link_to complaints_path, class: "navbar-brand" do %>
-    <div id="container-logo-nav">
-      <h6>Urban</h6><h6 class="blue-font">Feed</h6>
-    </div>
+  <% if user_signed_in? && current_user.mayor == true %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <div id="container-logo-nav">
+        <h6>Urban</h6><h6 class="blue-font">Feed</h6>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to complaints_path, class: "navbar-brand" do %>
+      <div id="container-logo-nav">
+        <h6>Urban</h6><h6 class="blue-font">Feed</h6>
+      </div>
+    <% end %>
   <% end %>
 
   <div id="flex">
@@ -16,7 +24,7 @@
       <% if user_signed_in? %>
         <div id="padding-for-username">
           <%= link_to profile_path, id: "username-style" do%>
-             <%= current_user.name %><%= link_to image_tag("USERICON.png", width: 30, height: 30), root_path %>
+             <%= current_user.name %><%#= link_to image_tag("USERICON.png", width: 30, height: 30) %>
           <% end %>
         </div>
       <% else %>
