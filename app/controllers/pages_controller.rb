@@ -4,11 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
-
   def profile
     @user = current_user
   end
 
-  #def user_profile # is actually author profile
-  #end
+  def mail
+  end
 end

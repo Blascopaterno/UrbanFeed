@@ -10,7 +10,16 @@
       <p>You havent add any complaint </p>
     <% else %>
       <% Complaint.where(favorite: true).each do |complaint| %>
-        <%= complaint.description %>
+        <div>
+          <div>
+            <%= complaint.description %>
+          </div>
+          <div>
+            <%= link_to create_email_path do %>
+              <p>[\/]</p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
