@@ -66,6 +66,11 @@
               <div class="tag">
                 <%= complaint.type.name %>
               </div>
+              <div>
+                <%= link_to basket_path(complaint: complaint), method: :post do %>
+                  <p>+</p>
+                <% end %>
+              </div>
             </div>
           </div>
           <%= render 'showcity', complaint: complaint  %>
