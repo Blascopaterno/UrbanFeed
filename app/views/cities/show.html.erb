@@ -43,14 +43,13 @@
     ></div>
   </div>
 
-  <div class="complaint-container">
-    <h1 id="complaints">Complaints:</h1>
-      <div class="type-btn">
-        <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
-      </div>
+
 
   <div id="city-container">
     <h1>Complaints:</h1>
+      <div class="type-btn">
+        <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
+      </div>
 
     <div>
       <% @city.complaints.each do |complaint| %>
@@ -74,6 +73,7 @@
       <% end %>
     </div>
   </div>
+</div>
 
 
 <script>
