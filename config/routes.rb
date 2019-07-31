@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get 'supermap', to: 'pages#supermap', as: :supermap
 
   get 'emails', to: 'pages#emails', as: :emails
+
+  get 'create_email', to: 'pages#create_email', as: :create_email
 end
