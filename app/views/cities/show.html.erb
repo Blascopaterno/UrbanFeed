@@ -2,8 +2,8 @@
   <h1><%= @city.name %></h1>
   <div id="city-type-filter">
     <h3>filter your complaint by type:</h3>
-  </div>
 </div>
+  </div>
     <div class="margins-type">
       <span class="tag type">
       <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
@@ -30,7 +30,7 @@
     <div
     id="map"
     style="width: 100%;
-    height: 380px;"
+    height: 340px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     <% if @results.present?%>
@@ -42,8 +42,16 @@
     <% end %>
     ></div>
   </div>
+
+  <div class="complaint-container">
+    <h1 id="complaints">Complaints:</h1>
+      <div class="type-btn">
+        <button onclick="scrollWin(0, 550)" id="myBtn" ><%= image_tag("scroll_arrow_down.png", width: 32, height: 28) %></button>
+      </div>
+
   <div id="city-container">
     <h1>Complaints:</h1>
+
     <div>
       <% @city.complaints.each do |complaint| %>
         <div class="complaint-container">
@@ -68,3 +76,8 @@
   </div>
 
 
+<script>
+  function scrollWin(x, y) {
+    window.scrollBy(x, y);
+  }
+</script>
