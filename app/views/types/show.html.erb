@@ -4,7 +4,7 @@
     <h3>filter your complaint by type:</h3>
   </div>
 </div>
-  <div id="margins-type">
+  <div class="margins-type">
     <span class="tag type">
       <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
       <%= Type.find_by(name: 'Bridge').name %>
@@ -59,6 +59,7 @@
             <% end %>
           </div>
           <div class="col-4 upvote-complaints">
+            <i class="fas fa-thumbs-up" class="blue-font"></i>
             <%= complaint.upvote %>
             <div class="tag">
               <%= complaint.type.name %>

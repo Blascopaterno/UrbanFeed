@@ -1,11 +1,11 @@
-.type {
-  width: 100px;
-}
-
-
 #margins-type a {
   text-decoration: none;
   color: #646464;
+}
+
+.margins-type {
+  display: flex;
+  justify-content: space-around;
 }
 
 
