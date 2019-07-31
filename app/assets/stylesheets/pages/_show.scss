@@ -11,8 +11,10 @@
 .complaint_image {
 
   img{
-    width: 100%;
-    height: 100%
+    width: 60%;
+    height: 50%;
+
+
   }
 }
 
@@ -27,13 +29,16 @@
 }
 
 #category {
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: rgba(200, 200, 200, 0.8);
     color: #646464;
     text-align: center;
     margin-top: 10px;
-    padding: 3px 8px;
-    width: 108px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    width: auto;
+    vertical-align: center;
 }
 
 .show-form {
@@ -58,4 +63,20 @@
     width: 90%;
 }
 
+#type {
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  border: grey solid 1px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  width: auto;
+  margin-left: 10px;
+}
 
+.items {
+  display: flex;
+  justify-content: flex-start;
+
+}

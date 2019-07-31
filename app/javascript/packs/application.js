@@ -13,3 +13,11 @@ initAutocomplete("complaint-address");
 complaintBtns();
 mayorSelect();
 initPhotoUpload();
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Your email is sent!",
+  text: "Time to fix the complaint!",
+  icon: "success"
+});
