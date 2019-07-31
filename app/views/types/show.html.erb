@@ -3,6 +3,7 @@
   <div id="city-type-filter">
     <h3>filter your complaint by type:</h3>
   </div>
+</div>
   <div id="margins-type">
     <span class="tag type">
       <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
@@ -69,7 +70,7 @@
       <% end %>
     </div>
   </div>
-</div>
+
 <script>
   function scrollWin(x, y) {
     window.scrollBy(x, y);
