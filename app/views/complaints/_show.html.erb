@@ -14,7 +14,10 @@
         </div>
 
         <p><strong><%= complaint.address %></strong></p>
-        <h6 id="category"><%= complaint.category.name %></h6>
+        <div class="items">
+          <h6 id="category"><%= complaint.category.name %></h6>
+          <h6 id="type"><%= complaint.type.name %></h6>
+        </div>
         <p id="description"><%= complaint.description %></p>
         <p><strong>Author : </strong><%= link_to complaint.user.name, user_path(complaint.user) %></p>
         <p><strong>Reported on : </strong><%= complaint.created_at %></p>
