@@ -25,47 +25,58 @@
 
   <div class="signup-form-inputs">
     <div class="form-inputs">
+      <div class="form-m">
       <%= f.input :name,
       required: true,
       autofocus: true,
       placeholder: "name",
       input_html: { autocomplete: "name" }%>
       <i class="fas fa-user"></i>
+      </div>
 
+      <div class="form-m">
       <%= f.association :city,
       required: true,
       autofocus: true,
        prompt: "city",
       input_html: { autocomplete: "city" }%>
       <i class="fas fa-home"></i>
+       </div>
 
+      <div class="form-m">
       <%= f.input :profession,
       required: true,
       autofocus: true,
       placeholder: "profession",
       input_html: { autocomplete: "profession" }%>
       <i class="fas fa-briefcase"></i>
+      </div>
 
+      <div class="form-m">
       <%= f.input :email,
       required: true,
       autofocus: true,
       placeholder: "email",
       input_html: { autocomplete: "email" }%>
       <i class="fas fa-envelope"></i>
+      </div>
 
+      <div class="form-m">
       <%= f.input :password,
       required: true,
       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
       placeholder: "password",
       input_html: { autocomplete: "new-password" } %>
       <i class="fas fa-lock" id= "initial"></i>
+      </div>
 
+      <div class="form-m">
       <%= f.input :password_confirmation,
       required: true,
       placeholder: "confirm password",
       input_html: { autocomplete: "new-password" } %>
       <i class="fas fa-lock" id= "confirmation"></i>
-
+      </div>
         </div>
       </div>
 

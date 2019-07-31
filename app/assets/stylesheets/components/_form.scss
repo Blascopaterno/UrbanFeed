@@ -28,6 +28,7 @@ flex-direction: column;
 .modal-content {
   padding: 20px;
   border-radius: 15px;
+
 }
 
 .form-check {
@@ -142,7 +143,7 @@ flex-direction: column;
     .name-star {
     position: relative;
     left: 150px;
-    top: -590px;
+    top: -472px;
     color: rgba(81, 81, 81, 0.53);
     }
 
@@ -150,28 +151,28 @@ flex-direction: column;
     .city-star {
     position: relative;
     left: 150px;
-    top: -540px;
+    top: -440px;
     color: rgba(81, 81, 81, 0.53);
     }
 
         .email-star {
     position: relative;
     left: 150px;
-    top: -399px;
+    top: -338px;
     color: rgba(81, 81, 81, 0.53);
     }
 
           .password-star {
     position: relative;
     left: 150px;
-    top: -347px;
+    top: -307px;
     color: rgba(81, 81, 81, 0.53);
     }
 
              .confirm-star {
     position: relative;
     left: 150px;
-    top: -275px;
+    top: -253px;
     color: rgba(81, 81, 81, 0.53);
     }
 
@@ -180,9 +181,13 @@ flex-direction: column;
     color: rgba(81, 81, 81, 0.53);
     position: relative;
     left: -55px;
-    top: 20px;
+    top: 7px;
 }
 
 
+.form-m {
+margin: -20px;
+
+}
 
 
