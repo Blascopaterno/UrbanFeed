@@ -1,1 +1,17 @@
-<h1>Email page</h1>
+<div>
+  <div>
+    <h1>Your complaints basket</h1>
+    <h6>Use this tool to send emails to multiple citizens
+    with a single click!</h6>
+  </div>
+  <h3>Complaints you have added:</h3>
+  <div>
+    <% if Complaint.find_by(favorite: true).nil? %>
+      <p>You havent add any complaint </p>
+    <% else %>
+      <% Complaint.where(favorite: true).each do |complaint| %>
+        <%= complaint.description %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

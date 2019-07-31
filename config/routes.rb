@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post "upvote", to: "complaints#upvote", as: :upvote
 
+  post 'basket', to: 'users#basket', as: :basket
+
   get 'profile', to: 'pages#profile', as: :profile
   #get 'user_profile', to: 'pages#user_profile', as: :user_profile
   get 'supermap', to: 'pages#supermap', as: :supermap
