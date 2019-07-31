@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   #get 'user_profile', to: 'pages#user_profile', as: :user_profile
   get 'supermap', to: 'pages#supermap', as: :supermap
 
+  get "/complaints/:complaint_id/mail", to: 'pages#mail', as: :mail
+
   get 'emails', to: 'pages#emails', as: :emails
 
   get 'create_email', to: 'pages#create_email', as: :create_email
