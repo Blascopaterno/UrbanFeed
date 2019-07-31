@@ -16,4 +16,8 @@
   <% end %>
 </div>
 
-<%= link_to 'Back', complaints_path %>
+<% if current_user.mayor == true %>
+  <p><%= link_to 'Back', city_path(City.first.id) %></p>
+<% else %>
+  <p><%= link_to 'Back', complaints_path %></p>
+<% end %>

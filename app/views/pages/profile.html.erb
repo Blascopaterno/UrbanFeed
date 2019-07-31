@@ -23,7 +23,11 @@
   <% end %>
 </div>
 
-<p><%= link_to 'Back', complaints_path %></p>
+<% if current_user.mayor == true %>
+  <p><%= link_to 'Back', city_path(City.first.id) %></p>
+<% else %>
+  <p><%= link_to 'Back', complaints_path %></p>
+<% end %>
 
 <p><%= link_to "log out", destroy_user_session_path, method: :delete%></p>
 
