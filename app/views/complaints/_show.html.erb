@@ -19,8 +19,10 @@
           <h6 id="type"><%= complaint.type.name %></h6>
         </div>
         <p id="description"><%= complaint.description %></p>
+        <div class="description-date">
         <p><strong>Author : </strong><%= link_to complaint.user.name, user_path(complaint.user) %></p>
         <p><strong>Reported on : </strong><%= complaint.created_at %></p>
+        </div>
         <!-- The photo is displayed below -->
         <div class="upvote-complaints">
           <% if complaint.picture.present? %>
