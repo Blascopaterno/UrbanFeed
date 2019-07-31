@@ -56,7 +56,9 @@
 
 #location-style{
   display: flex;
-  justify-content: center;
+  position: relative;
+  top: 15px;
+
 }
 
 #address-location {
@@ -85,10 +87,11 @@
 }
 
 
+
 .index_instruction p{
  position: relative;
     left: -50px;
-    top: 10px;
+    top: 20px;
 }
 
 
