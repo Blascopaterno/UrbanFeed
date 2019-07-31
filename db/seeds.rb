@@ -34,7 +34,7 @@ cat_3 = Category.find_by(name: 'Accessibility')
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
-  address: "20 calle del Ancorà",
+  address: "calle amor de dios, madrid",
   upvote: 3,
   user: User.last,
   category: cat_2,
