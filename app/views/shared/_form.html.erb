@@ -1,7 +1,7 @@
 <%= simple_form_for(@complaint) do |f| %>
 <div class="form-center">
   <div class="create_form">
-        <%= f.input :address 3%>
+        <%= f.input :address %>
          <%= f.association :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: Type.all, value_method: :id  %>
         <%= f.association :category,
                     collection: Category.all, value_method: :id %>
