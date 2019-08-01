@@ -6,6 +6,12 @@ class UsersController < ApplicationController
   def basket
     @complaint = Complaint.find(params[:complaint])
     @complaint.favorite = true
-    @complaint.save
+    if @complaint.save
+      if params[:city].present?
+        redirect_to city_path(params[:city].to_i), notice: "Complaint was succesfully added!"
+      elsif params[:type].present?
+        redirect_to type_path(params[:type].to_i), notice: "Complaint was succesfully added!"
+      end
+    end
   end
 end
