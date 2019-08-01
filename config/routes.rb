@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+  get 'errors/unacceptable'
+  get 'errors/internal_error'
   devise_for :users
   root to: 'pages#home'
 
@@ -23,4 +26,8 @@ Rails.application.routes.draw do
   get 'emails', to: 'pages#emails', as: :emails
 
   get 'create_email', to: 'pages#create_email', as: :create_email
+
+  get "/404", to: "errors#not_found"
+  get "/422", to: "errors#unacceptable"
+  get "/500", to: "errors#internal_error"
 end
