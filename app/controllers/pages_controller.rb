@@ -7,4 +7,10 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
   end
+
+  def create_email
+    complaint = Complaint.find(params[:complaint])
+    complaint.favorite = false
+    complaint.save
+  end
 end

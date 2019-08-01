@@ -15,7 +15,7 @@
             <%= complaint.description %>
           </div>
           <div>
-            <%= link_to create_email_path do %>
+            <%= link_to create_email_path(complaint: complaint) do %>
               <p>[\/]</p>
             <% end %>
           </div>
