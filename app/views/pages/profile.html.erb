@@ -47,11 +47,12 @@
     <% end %>
   </div>
 
-<% if current_user.mayor == true %>
-  <p><%= link_to 'Back', city_path(City.first.id) %></p>
-<% else %>
-  <p><%= link_to 'Back', complaints_path %></p>
-<% end %>
+<div class="bottom-links">
+  <% if current_user.mayor == true %>
+    <p><%= link_to 'Back', city_path(City.first.id) %></p>
+  <% else %>
+    <p><%= link_to 'Back', complaints_path %></p>
+  <% end %>
 
-<p><%= link_to "log out", destroy_user_session_path, method: :delete%></p>
-
+  <p><%= link_to "log out", destroy_user_session_path, method: :delete%></p>
+</div>
