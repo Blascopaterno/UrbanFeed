@@ -9,70 +9,43 @@
 
   <% if current_user.mayor == false %>
     <h2>Your complaint history :</h2>
-    <div class="profile-info-container">
-      <% Complaint.where(user_id:@user.id).each do |complaint| %>
-      <div class="complaint-container">
-        <hr id="separator-profile">
-
-
-        <div class="row" id="row-profile">
-          <div class="" >
-            <div style=text-align="center">
-            <div class="tag">
-              <%= complaint.type.name %>
+    <% if Complaint.where(user_id:@user.id).count == 0 %>
+      <p id = "no-complaint"><em>Sorry, you don't have any complaint 🤔 !</em></p>
+    <% else %>
+      <div class="profile-info-container">
+        <% Complaint.where(user_id:@user.id).each do |complaint| %>
+        <div class="complaint-container">
+          <hr id="separator-profile">
+          <div class="row" id="row-profile">
+            <div class="" >
+              <div style=text-align="center">
+              <div class="tag">
+                <%= complaint.type.name %>
+              </div>
+              <br>
+              <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+                <p> "<%= complaint.description %>" </p>
+              <% end %>
+              <% end %>
+              </div>
             </div>
-            <br>
-
-            <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
-              <p> "<%= complaint.description %>" </p>
-            <% end %>
-            </div>
-          </div>
-          <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
+            <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
 
 
-          </div>
-          <div class="profile-options-container">
-            <p id="thumb-profile"><%= complaint.upvote %><i class="fas fa-thumbs-up" id="blue-thumb-profile"></i></p>
-             <p><%= link_to image_tag("DELETEICON.png", width: 22, height: 28), complaint_path(complaint), method: :delete %></p>
             </div>
-            <hr id="separator-profile">
-        </div>
-      </div>
-<!--
-      <div class="container">
-    <h5 id="scrollcomplaint"> Complaints around the area </h5>
-    <@% @complaints.each do |complaint| %>
-      <div class="complaint-container">
-        <hr class="separator">
-        <div class="row">
-          <div class="col-8" >
-            <@%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
-              <p> "<%= complaint.description %>" </p>
-            <@% end %>
-          </div>
-          <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
-              <@%= render 'likes', complaint: complaint %>
-            <div class="tag">
-              <@%= complaint.type.name %>
-            </div>
+            <div class="profile-options-container">
+              <p id="thumb-profile"><%= complaint.upvote %><i class="fas fa-thumbs-up" id="blue-thumb-profile"></i></p>
+               <p><%= link_to image_tag("DELETEICON.png", width: 22, height: 28), complaint_path(complaint), method: :delete %></p>
+              </div>
+              <hr id="separator-profile">
           </div>
         </div>
-        <@%= render 'show', complaint: complaint  %>
       </div>
-    <@% end %>
+    <% end %>
+    <% else %>
+      <h2>Mayor</h2>
+    <% end %>
   </div>
-</div> -->
-      <!-- <p><strong>Description: </strong><%= complaint.description %></p> -->
-      <!-- <p><strong>Type: </strong><@%= complaint.type.name %></p> -->
-
-    </div>
-
-  <% end %>
-  <% else %>
-    <h2>Mayor</h2>
-  <% end %>
-</div>
 
 <% if current_user.mayor == true %>
   <p><%= link_to 'Back', city_path(City.first.id) %></p>
