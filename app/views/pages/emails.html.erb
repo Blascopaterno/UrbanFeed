@@ -1,26 +1,35 @@
-<div>
-  <div>
-    <h1>Your complaints basket</h1>
-    <h6>Use this tool to send emails to multiple citizens
-    with a single click!</h6>
+<div id="email-container">
+  <div id="email-title">
+    <h3>Your complaints basket</h3>
+    <p>Use this tool to send emails to multiple citizens
+    with a single click!</p>
   </div>
-  <h3>Complaints you have added:</h3>
+  <div id='email-complaints-title'>
+    <h6>Complaints you have added:</h6>
+  </div>
   <div>
     <% if Complaint.find_by(favorite: true).nil? %>
       <p>You havent add any complaint </p>
     <% else %>
       <% Complaint.where(favorite: true).each do |complaint| %>
-        <div>
-          <div>
-            <%= complaint.description %>
+        <div class="complaint-container">
+          <hr class="separator">
+          <div class="row">
+            <div class="col-8" >
+              <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+                <p> "<%= complaint.description %>" </p>
+              <% end %>
+            </div>
+            <div class="col-4">
+                <%= link_to create_email_path(complaint: complaint) do %>
+                  <p>[\/]</p>
+                <% end %>
+            </div>
           </div>
-          <div>
-            <%= link_to create_email_path(complaint: complaint) do %>
-              <p>[\/]</p>
-            <% end %>
-          </div>
+          <%= render 'showemail', complaint: complaint  %>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
+
