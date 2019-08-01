@@ -1,0 +1,38 @@
+<div class="modal fade" id="showModal_<%= complaint.id %>" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="show-form">
+        <div class="complaint-head">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h6 class="modal-title" id="exampleModalLongTitle">Complaint details</h6>
+        </div>
+
+        <p><strong><%= complaint.address %></strong></p>
+        <div class="items">
+          <h6 id="category"><%= complaint.category.name %></h6>
+          <h6 id="type"><%= complaint.type.name %></h6>
+        </div>
+        <p id="description"><%= complaint.description %></p>
+        <p><strong>Author : </strong><%= link_to complaint.user.name, user_path(complaint.user) %></p>
+        <p><strong>Reported on : </strong><%= complaint.created_at %></p>
+        <!-- The photo is displayed below -->
+        <div class="upvote-complaints">
+          <% if complaint.picture.present? %>
+          <div class="complaint_image">
+            <%= cl_image_tag(complaint.picture, crop: :fill) %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="upvote">
+        <i class="fas fa-thumbs-up" class="blue-font"></i>
+        <div class="col-4 upvote-complaints">
+          <%= complaint.upvote %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
