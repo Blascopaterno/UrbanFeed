@@ -4,15 +4,16 @@
         <%= f.input :address %>
          <%= f.association :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: Type.all, value_method: :id  %>
         <%= f.association :category,
-                    collection: Category.all, value_method: :id %>
+                    collection: Category.all, value_method: :id  %>
         <dt><%= f.input :description %></dt>
         <label class="form-control-file file" type="file" name="complaint[picture]" id="complaint_picture"> <%=image_tag("ADDPHOTOBUTTON.png", width: 130, height: 40)%>
         <%= f.input :picture, as: :file, label: false %>
         <%= f.input :picture_cache, as: :hidden %>
         <img id="attached" class="image-attachment" src="" />
-        <%= f.submit class: "btn-flat-create" %>
+        <%= f.submit, class: "btn-flat-create btn" %>
     <% end %>
   </div>
 </div>
+
 
 
