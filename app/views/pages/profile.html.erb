@@ -7,7 +7,7 @@
     <p><strong>Email: </strong><%=@user.email%></p>
   </div>
 
-  <% if current_user.mayor == false %>
+  <% unless current_user.mayor == true %>
     <h2>Your complaint history :</h2>
     <% if Complaint.where(user_id:@user.id).count == 0 %>
       <p id = "no-complaint"><em>Sorry, you don't have any complaint 🤔 !</em></p>
