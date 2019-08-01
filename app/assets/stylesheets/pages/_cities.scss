@@ -1,3 +1,11 @@
 #complaints {
   text-align: center;
 }
+
+.tag:hover {
+  background-color: #e56f6f;
+}
+
+.tag:hover a {
+  color: white;
+}
