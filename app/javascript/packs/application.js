@@ -21,3 +21,6 @@ initSweetalert('#sweet-alert-demo', {
   text: "Time to fix the complaint!",
   icon: "success"
 });
+
+
+smoothScroll.init();
