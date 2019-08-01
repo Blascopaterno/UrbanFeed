@@ -48,12 +48,9 @@
           <div class="col-4 upvote-complaints">
             <i class="fas fa-thumbs-up" class="blue-font"></i>
             <%= complaint.upvote %>
-            <div class="tag">
-              <%= complaint.type.name %>
-            </div>
-            <div>
+            <div class="c-t-plus-btn">
                 <%= link_to basket_path(complaint: complaint), method: :post do %>
-                  <p>+</p>
+                  <%= image_tag('ADDBUTTON.png', width: 20, height: 20) %>
                 <% end %>
             </div>
           </div>
