@@ -40,7 +40,7 @@ class ComplaintsController < ApplicationController
     address_to_city = Geocoder.search(@complaint.address)[0].data["address"]["city"]
     @complaint.city = City.find_by_name(address_to_city)
     if @complaint.save
-      redirect_to complaints_path
+      redirect_to complaints_path, notice: "Complaint was succesfully created!"
     else
       render :new
     end
