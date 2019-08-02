@@ -8,6 +8,28 @@ abbr[title="required"] {
 
 .masha-form {
   text-align: center;
+  position: relative;
+  &.login-form {
+    #initial {
+    font-size: 20px;
+    color: gray;
+    position: absolute;
+    left: 10px;
+    margin-left: 0px;
+    top: 75px;
+    }
+
+    .fa-envelope {
+    font-size: 20px;
+    color: gray;
+    margin-left: 0px;
+    position: absolute;
+    left: 10px;
+    top:15px;
+    }
+  }
+
+
 }
 
 .signup-form-inputs {
@@ -113,5 +135,13 @@ abbr[title="required"] {
 
 .form-control-no-pa {
   padding-left: 5px!important;
+}
+
+.signin-form-container {
+
+.form-group {
+  margin-bottom: 10px;
+}
+
 }
 

@@ -54,6 +54,14 @@ body {
 .form_box {
   display: flex;
   position: relative;
+
+  .fas {
+    position: absolute;
+    right:85px;
+    top: 18px;
+    color: #797979;
+
+  }
 }
 
 .form-control-style {
