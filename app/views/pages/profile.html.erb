@@ -26,25 +26,22 @@
               <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
                 <p> "<%= complaint.description %>" </p>
               <% end %>
-              <% end %>
+
               </div>
-            </div>
-            <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
-
-
             </div>
             <div class="profile-options-container">
               <p id="thumb-profile"><%= complaint.upvote %><i class="fas fa-thumbs-up" id="blue-thumb-profile"></i></p>
                <p><%= link_to image_tag("DELETEICON.png", width: 22, height: 28), complaint_path(complaint), method: :delete %></p>
               </div>
               <hr id="separator-profile">
-          </div>
+            </div>
         </div>
+        <% end %>
       </div>
     <% end %>
-    <% else %>
-      <h2>Mayor</h2>
-    <% end %>
+  <% else %>
+    <h2></h2>
+  <% end %>
   </div>
 
 <div class="bottom-links">

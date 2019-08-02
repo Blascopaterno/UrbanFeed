@@ -43,7 +43,7 @@
 
   <div class="container">
     <h5 id="scrollcomplaint"> Complaints around the area </h5>
-    <% @complaints.reverse_each do |complaint| %>
+    <% @complaints.each do |complaint| %>
       <div class="complaint-container">
         <hr class="separator">
         <div class="row">
