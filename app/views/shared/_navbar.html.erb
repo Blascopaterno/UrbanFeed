@@ -18,9 +18,6 @@
       <% unless user_signed_in? %>
         <%= link_to 'sign up', new_user_registration_path, class: "signup-link"%>
       <% end %>
-      <% if user_signed_in? && current_user.mayor == true %>
-        <%= link_to '[\/]', emails_path, class: "signup-link" %>
-      <% end %>
     </div>
 
     <div id="padding-for-login">
@@ -33,6 +30,13 @@
       <% else %>
         <h6 data-toggle="modal" data-target="#loginModal">login</h6>
       <% end %>
+      <div id="mail-logo">
+        <% if user_signed_in? && current_user.mayor == true %>
+          <%= link_to emails_path, class: "signup-link" do %>
+            <%= image_tag("Email-icon.png", width: 25, height: 25) %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

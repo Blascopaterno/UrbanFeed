@@ -2,6 +2,23 @@
   color: $blue;
 }
 
+.arrow {
+  box-sizing: border-box;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 10px;
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
 
 
 .smoothScroll {
@@ -9,15 +26,11 @@
   margin: 24px;
 }
 
-.upvote-complaints {
-  text-align: center;
-}
+
 
 .complaint-container {
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
-  margin-bottom: 20px;
 }
 
 .col-8 p {
