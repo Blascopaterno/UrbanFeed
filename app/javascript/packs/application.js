@@ -17,8 +17,7 @@ initPhotoUpload();
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
-  title: "Your email is sent!",
-  text: "Time to fix the complaint!",
+  title: "Your email has been sent to 10 citizens!",
   icon: "success"
 });
 

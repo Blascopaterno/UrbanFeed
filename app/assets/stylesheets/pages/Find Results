@@ -1,0 +1,22 @@
+Searching 227 files for "fas fa-location-arrow"
+
+/Users/mariano/code/UrbanFeed/app/views/pages/home.html.erb:
+   49            id: "complaint-address",
+   50            placeholder: " Introduce your location"%>
+   51:        <i class="fas fa-location-arrow"></i>
+   52          <%= submit_tag "Go!", class: "btn btn-primary square-btn-blue" %>
+   53        </div>
+
+1 match in 1 file
+
+
+Searching 230 files for "target the maximum"
+
+/Users/mariano/code/UrbanFeed/app/views/pages/home.html.erb:
+   14
+   15      <div class="container-intro">
+   16:       <p id = "p-intro">Use our tools to target the maximum amout of citizens!</p>
+   17      </div>
+   18
+
+1 match in 1 file
