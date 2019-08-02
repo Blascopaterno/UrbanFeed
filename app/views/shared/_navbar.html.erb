@@ -14,11 +14,11 @@
   <% end %>
 
   <div id="flex">
-    <span id="padding-for-signup">
+    <div id="padding-for-signup">
       <% unless user_signed_in? %>
-        <%= link_to 'sign up', new_user_registration_path, class: "signup-link"%>
+        <%= link_to 'signup', new_user_registration_path, class: "signup-link"%>
       <% end %>
-    </span>
+    </div>
 
     <div id="padding-for-login">
       <% if user_signed_in? %>
