@@ -4,28 +4,28 @@
     <h3>filter your complaint by type:</h3>
 </div>
   </div>
-    <div class="margins-type">
-      <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Bridges')) do %>
-        <%= Type.find_by(name: 'Bridges').name %>
+  <div class="margins-type">
+    <span class="tag type typeColor" >
+      <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
+      <%= "Bridges" %>
       <% end %>
-      </span>
-      <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Parks')) do %>
-        <%= Type.find_by(name: 'Parks').name %>
+    </span>
+    <span class="tag type typeColor">
+      <%= link_to type_path(Type.find_by(name: 'Park')) do %>
+      <%= "Parks" %>
       <% end %>
-      </span>
-      <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Roads')) do %>
-        <%= Type.find_by(name: 'Roads').name %>
+    </span>
+    <span class="tag type typeColor">
+      <%= link_to type_path(Type.find_by(name: 'Road')) do %>
+      <%= "Roads" %>
       <% end %>
-      </span>
-      <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Public Buildings')) do %>
-        <%= Type.find_by(name: 'Public Buildings').name %>
+    </span>
+    <span class="tag type typeColor">
+      <%= link_to type_path(Type.find_by(name: 'Public Bulding')) do %>
+      <%= "Public Buldings"  %>
       <% end %>
-      </span>
-    </div>
+    </span>
+  </div>
   <div class="madrid-map">
     <%= image_tag('MadridMap.png', width: 360, height: 250) %>
   </div>
