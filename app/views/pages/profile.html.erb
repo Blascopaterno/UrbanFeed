@@ -14,28 +14,27 @@
     <% else %>
       <div class="profile-info-container">
         <% Complaint.where(user_id:@user.id).each do |complaint| %>
-        <div class="complaint-container">
-          <hr id="separator-profile">
-          <div class="row" id="row-profile">
-            <div class="" >
-              <div style=text-align="center">
-              <div class="tag">
-                <%= complaint.type.name %>
+          <div class="complaint-container">
+            <hr id="separator-profile">
+            <div class="row" id="row-profile">
+              <div class="" >
+                <div style=text-align="center">
+                  <div class="tag">
+                    <%= complaint.type.name %>
+                  </div>
+                  <br>
+                  <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
+                    <p> "<%= complaint.description %>" </p>
+                  <% end %>
+                </div>
               </div>
-              <br>
-              <%= link_to complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}" do %>
-                <p> "<%= complaint.description %>" </p>
-              <% end %>
-
-              </div>
+              <div class="profile-options-container">
+                <p id="thumb-profile"><%= complaint.upvote %><i class="fas fa-thumbs-up" id="blue-thumb-profile"></i></p>
+                 <p><%= link_to image_tag("DELETEICON.png", width: 22, height: 28), complaint_path(complaint), method: :delete %></p>
+                </div>
+                <hr id="separator-profile">
             </div>
-            <div class="profile-options-container">
-              <p id="thumb-profile"><%= complaint.upvote %><i class="fas fa-thumbs-up" id="blue-thumb-profile"></i></p>
-               <p><%= link_to image_tag("DELETEICON.png", width: 22, height: 28), complaint_path(complaint), method: :delete %></p>
-              </div>
-              <hr id="separator-profile">
-            </div>
-        </div>
+          </div>
         <% end %>
       </div>
     <% end %>
