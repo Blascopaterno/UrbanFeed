@@ -13,7 +13,7 @@
           <h6 class="modal-title" id="exampleModalLongTitle">Complaint details</h6>
         </div>
 
-        <p><strong><%= complaint.address %></strong></p>
+        <p class="complaint-address"><strong><%= complaint.address %></strong></p>
         <div class="items">
           <h6 id="category"><%= complaint.category.name %></h6>
           <h6 id="type"><%= complaint.type.name %></h6>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="upvote">
-        <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
+        <div class="col-4 upvote-complaints complaint-icon" id="<%= complaint.id %>" >
           <%= link_to upvote_path(complaint:complaint),method: :put, remote: :true do %>
           <%= render 'likes', complaint: complaint %>
           <% end %>

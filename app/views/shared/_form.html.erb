@@ -1,11 +1,12 @@
 <%= simple_form_for(@complaint) do |f| %>
 <div class="form-center">
   <div class="create_form">
-        <%= f.input :address 3%>
+        <%= f.input :address%>
          <%= f.association :type, as: :radio_buttons, input_html: {class: "hidden"}, collection: Type.all, value_method: :id  %>
         <%= f.association :category,
-                    collection: Category.all, value_method: :id %>
-        <dt><%= f.input :description %></dt>
+        include_blank: "Select Option",
+         collection: Category.all,  value_method: :id %>
+        <dt><%= f.input :description, placeholder: "Please describe your complaint."%></dt>
         <label class="form-control-file file" type="file" name="complaint[picture]" id="complaint_picture"> <%=image_tag("ADDPHOTOBUTTON.png", width: 130, height: 40)%>
         <%= f.input :picture, as: :file, label: false %>
         <%= f.input :picture_cache, as: :hidden %>
