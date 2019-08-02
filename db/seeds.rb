@@ -14,15 +14,15 @@ User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Mort
 User.create!(email: 'helen.roger@bluewin.es', password: 'helene', name:'Helen Roger', profession: 'Teacher', city_id: 1, mayor: false )
 User.create!(email: 'mariano@urbanfeed.com', password: 'mariano', name: 'Mariano', profession: 'Developer', city_id: 1, mayor: false )
 
-Type.create(name: "Bridges")
-Type.create(name: "Roads")
-Type.create(name: "Parks")
-Type.create(name: "Public Bulidings")
+Type.create(name: "Bridge")
+Type.create(name: "Road")
+Type.create(name: "Park")
+Type.create(name: "Public Buliding")
 
-type_1 = Type.find_by(name: 'Bridges')
-type_2 = Type.find_by(name: 'Roads')
-type_3 = Type.find_by(name: 'Parks')
-type_4 = Type.find_by(name: 'Public Buildings')
+type_1 = Type.find_by(name: 'Bridge')
+type_2 = Type.find_by(name: 'Road')
+type_3 = Type.find_by(name: 'Park')
+type_4 = Type.find_by(name: 'Public Building')
 
 Category.create(name: 'Safety')
 Category.create(name: 'Maintenance')
