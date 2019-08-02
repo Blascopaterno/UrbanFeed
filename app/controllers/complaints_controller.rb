@@ -35,6 +35,7 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.new(complaint_params)
     @complaint.upvote = 1
     @complaint.user = current_user
+
     @complaint.category = Category.find(params[:complaint][:category_id])
     @complaint.type = Type.find(params[:complaint][:type_id])
     address_to_city = Geocoder.search(@complaint.address)[0].data["address"]["city"]
