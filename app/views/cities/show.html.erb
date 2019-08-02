@@ -6,23 +6,23 @@
   </div>
     <div class="margins-type">
       <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Bridge')) do %>
-        <%= "Bridges" %>
+      <%= link_to type_path(Type.find_by(name: 'Bridges')) do %>
+        <%= Type.find_by(name: 'Bridges').name %>
       <% end %>
       </span>
       <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Park')) do %>
-        <%= "Parks" %>
+      <%= link_to type_path(Type.find_by(name: 'Parks')) do %>
+        <%= Type.find_by(name: 'Parks').name %>
       <% end %>
       </span>
       <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Road')) do %>
-        <%= "Roads" %>
+      <%= link_to type_path(Type.find_by(name: 'Roads')) do %>
+        <%= Type.find_by(name: 'Roads').name %>
       <% end %>
       </span>
       <span class="tag type">
-      <%= link_to type_path(Type.find_by(name: 'Public Bulding')) do %>
-        <%= "Public Buldings" %>
+      <%= link_to type_path(Type.find_by(name: 'Public Buildings')) do %>
+        <%= Type.find_by(name: 'Public Buildings').name %>
       <% end %>
       </span>
     </div>

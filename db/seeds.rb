@@ -14,15 +14,15 @@ User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Mort
 User.create!(email: 'helen.roger@bluewin.es', password: 'helene', name:'Helen Roger', profession: 'Teacher', city_id: 1, mayor: false )
 User.create!(email: 'mariano@urbanfeed.com', password: 'mariano', name: 'Mariano', profession: 'Developer', city_id: 1, mayor: false )
 
-Type.create(name: "Bridge")
-Type.create(name: "Road")
-Type.create(name: "Park")
-Type.create(name: "Public Bulding")
+Type.create(name: "Bridges")
+Type.create(name: "Roads")
+Type.create(name: "Parks")
+Type.create(name: "Public Bulidings")
 
-type_1 = Type.find_by(name: 'Bridge')
-type_2 = Type.find_by(name: 'Road')
-type_3 = Type.find_by(name: 'Park')
-type_4 = Type.find_by(name: 'Public Bulding')
+type_1 = Type.find_by(name: 'Bridges')
+type_2 = Type.find_by(name: 'Roads')
+type_3 = Type.find_by(name: 'Parks')
+type_4 = Type.find_by(name: 'Public Buildings')
 
 Category.create(name: 'Safety')
 Category.create(name: 'Maintenance')
@@ -36,7 +36,7 @@ cat_3 = Category.find_by(name: 'Accessibility')
 
 complaint_1 = Complaint.new(
   description: 'Huge crack on the road, almost broke my car this morning',
-  address: "calle amor de dios, madrid",
+  address: "Calle Amor de Dios, Madrid",
   upvote: 9,
   user: User.find_by(name: "Test Uno"),
   category: cat_2,
@@ -48,7 +48,7 @@ complaint_1.save!
 
 complaint_2 = Complaint.new(
   description: 'The bridge barriers are not high enough',
-  address: "14 calle Juan de Urbieta",
+  address: "14 Calle Juan de Urbieta",
   upvote: 5,
   user: User.find_by(name: "Test Uno"),
   category: cat_1,
@@ -67,7 +67,7 @@ complaint_3 = Complaint.new(
   type: type_3,
   city: City.find(1),
 )
-complaint_3.remote_picture_url = "https://image.jimcdn.com/app/cms/image/transf/dimension=406x1024:format=jpg/path/s18861ad9a87d9f6b/image/i24b657d65e4a98b7/version/1500027796/si-vous-%C3%AAtes-agressif-votre-chien-le-sera-aussi.jpg"
+complaint_3.remote_picture_url = "https://cdn-images-1.medium.com/max/1600/1*udTYOpd6l3l-QpA5jFh3kQ.jpeg"
 complaint_3.save!
 
 complaint_4 = Complaint.new(
