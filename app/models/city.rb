@@ -3,3 +3,5 @@ class City < ApplicationRecord
   has_many :complaints
   has_many :users
 end
+
+

@@ -2,10 +2,15 @@
 <h5><%= link_to complaint.description, complaint_path(complaint), "data-toggle" => "modal", "data-target" => "#showModal_#{complaint.id}"  %></h5>
 
 <div class="upvote">
-  <div class="col-4 upvote-complaints" id="<%= complaint.id %>" >
+  <div class="index-upvoke upvote-complaints" id="<%= complaint.id %>" >
+    <div class="tag">
+      <%= complaint.type.name %>
+    </div>
+    <div>
     <%= link_to upvote_path(complaint: complaint),method: :post, remote: :true do %>
     <%= render 'likes', complaint: complaint %>
     <% end %>
+  </div>
   </div>
 </div>
 

@@ -36,14 +36,14 @@
 <div class="complaint-index-container" id="complaintBox" style="min-height:600px;">
   <%= link_to "Add a complaint", root_path, class: "btn btn-primary-red square-btn-red",  "data-toggle" => "modal", "data-target" => "#formModal" %>
 
-  <div id="btn-none-style">
-    <button onclick="scrollWin()" id="myBtn" ><%= image_tag("scroll_arrow_down.png", id: "imgChange", width: 47, height: 47) %></button>
-  </div>
+  <a data-scroll href="#scrollcomplaint">
+    <div class="arrow"></div>
+  </a>
 
 
   <div class="container">
     <h5 id="scrollcomplaint"> Complaints around the area </h5>
-    <% @complaints.each do |complaint| %>
+    <% @complaints.reverse_each do |complaint| %>
       <div class="complaint-container">
         <hr class="separator">
         <div class="row">
@@ -70,7 +70,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add a complaint</h5>
+        <h5 class="modal-title" align="center" id="exampleModalLongTitle">Add a complaint</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
