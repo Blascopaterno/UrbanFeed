@@ -9,7 +9,7 @@
   </div>
   <div>
     <% if Complaint.find_by(favorite: true).nil? %>
-      <p>You havent add any complaint </p>
+      <p>You havent added any complaints </p>
     <% else %>
       <% Complaint.where(favorite: true).each do |complaint| %>
         <div class="complaint-container">
