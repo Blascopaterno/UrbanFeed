@@ -113,7 +113,7 @@ body {
   padding-top:10px;
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .container-intro {
@@ -127,6 +127,30 @@ body {
   color: grey;
   padding-top:16px;
   margin-top:19px;
+}
+
+.tool-instruction2 {
+position: relative;
+bottom: 43px;
+left: 200px;
+text-align: left;
+font-size: 12px;
+p {
+  margin-bottom: 0;
+}
+
+}
+
+.tool-instruction1 {
+  position: relative;
+bottom: 10px;
+left: 10px;
+text-align: left;
+font-size: 12px;
+width:140px;
+p {
+  margin-bottom: 0;
+}
 }
 
 #p-intro {
@@ -152,5 +176,10 @@ body {
     margin-left: 40px;
     margin-right: 7px;
   }
+}
+
+#action p {
+  font-size: 8px;
+  color: rgba(170, 170, 170, 0.9);
 }
 
