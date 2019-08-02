@@ -47,7 +47,7 @@ complaint_1.remote_picture_url = "https://upload.wikimedia.org/wikipedia/commons
 complaint_1.save!
 
 complaint_2 = Complaint.new(
-  description: 'The bridge barrier are not high enough',
+  description: 'The bridge barriers are not high enough',
   address: "14 calle Juan de Urbieta",
   upvote: 5,
   user: User.find_by(name: "Test Uno"),
@@ -59,8 +59,8 @@ complaint_2.remote_picture_url = "http://www.mdsbarriers.com/images/mds%20tl4-26
 complaint_2.save!
 
 complaint_3 = Complaint.new(
-  description: 'To much dogs in the park i am scared for my child',
-  address: "parque del retiro, madrid",
+  description: 'Park fountains have no running water',
+  address: "Parque del Retiro, Madrid",
   upvote: 10,
   user: User.last,
   category: cat_1,
@@ -71,8 +71,8 @@ complaint_3.remote_picture_url = "https://image.jimcdn.com/app/cms/image/transf/
 complaint_3.save!
 
 complaint_4 = Complaint.new(
-  description: 'The hospital is not efficient, had to wait an hour before my husband was taking care of.',
-  address: "1 calle del Ancora",
+  description: 'The hospital entrance doesnt have a wheelchair access.',
+  address: "1 Calle del Ancora",
   upvote: 2,
   user: User.last,
   category: cat_2,
