@@ -101,7 +101,7 @@ body {
 
 #m-sub-welcome {
   position: absolute;
-  right: 93px;
+  right: 230px;// lot of px for presentaion
   line-height:3px;
 }
 
@@ -137,6 +137,8 @@ text-align: left;
 font-size: 12px;
 p {
   margin-bottom: 0;
+  padding-left: 140px; // lot od px for presentation
+  color: rgba(120,120,120,0.9);
 }
 
 }
@@ -150,6 +152,7 @@ font-size: 12px;
 width:140px;
 p {
   margin-bottom: 0;
+  color: rgba(120,120,120,0.9);
 }
 }
 
@@ -178,8 +181,4 @@ p {
   }
 }
 
-#action p {
-  font-size: 8px;
-  color: rgba(170, 170, 170, 0.9);
-}
 
