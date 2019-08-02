@@ -71,7 +71,7 @@ complaint_3.remote_picture_url = "https://image.jimcdn.com/app/cms/image/transf/
 complaint_3.save!
 
 complaint_4 = Complaint.new(
-  description: 'The hospital entrance doesnt have a wheelchair access.',
+  description: 'The hospital entrance doesnt have a wheelchair access',
   address: "1 Calle del Ancora",
   upvote: 2,
   user: User.last,
