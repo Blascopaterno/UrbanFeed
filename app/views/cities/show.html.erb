@@ -53,24 +53,16 @@
                 <%= complaint.type.name %>
               </div>
               <div class="c-t-plus-btn">
-
-
                   <%= link_to basket_path(complaint: complaint, city: @city), method: :post do %>
                     <%= image_tag('ADDBUTTON.png', width: 20, height: 20) %>
                   <% end %>
               </div>
             </div>
           </div>
-          <%= render 'showcity', complaint: complaint  %>
+         <%= render 'showcity', complaint: complaint  %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
 
-
-<script>
-  function scrollWin(x, y) {
-    window.scrollBy(x, y);
-  }
-</script>
