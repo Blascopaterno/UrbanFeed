@@ -8,6 +8,7 @@ puts"delete all data"
 Region.create(name: 'Community of Madrid')
 Province.create(name: 'Province of Madrid', region: Region.last)
 City.create!(name: 'Madrid', province: Province.last)
+City.create!(name: 'Geneve', province: Province.last)
 
 User.create(email: 'test1@urbanfeed.org', password: '123456', name: "Test Uno", city_id: 1, mayor: false )
 User.create(email: 'jacobmorten@tanger.cc', password: 'chopit', name:'Jacob Morten', profession: 'Model', mayor: true, city_id: 1)

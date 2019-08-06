@@ -39,6 +39,7 @@ class ComplaintsController < ApplicationController
     @complaint.category = Category.find(params[:complaint][:category_id])
     @complaint.type = Type.find(params[:complaint][:type_id])
     address_to_city = Geocoder.search(@complaint.address)[0].data["address"]["city"]
+    City.create(name: address_to_city, province: Province.last)
     @complaint.city = City.find_by_name(address_to_city)
     if @complaint.save
       redirect_to complaints_path, notice: "Complaint was succesfully created!"
